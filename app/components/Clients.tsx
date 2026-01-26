@@ -23,7 +23,7 @@ export default function Clients() {
             {clients.map((client) => (
               <div
                 key={client.id}
-                className="flex items-center justify-center p-6 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors w-full"
+                className="flex items-center justify-center p-6 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors w-full cursor-pointer"
               >
                 <Image
                   src={client.logo}

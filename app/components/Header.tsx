@@ -39,7 +39,7 @@ export default function Header() {
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? 'bg-white shadow-md' : 'bg-transparent'
+        isScrolled || isMobileMenuOpen ? 'bg-white shadow-md' : 'bg-transparent'
       }`}
     >
       <nav className="container mx-auto px-4 py-4">
@@ -50,7 +50,7 @@ export default function Header() {
               e.preventDefault()
               scrollToSection('home')
             }}
-            className="text-2xl font-bold text-gray-900 hover:text-gray-700 transition-colors"
+            className="text-2xl font-bold text-gray-900 hover:text-gray-700 transition-colors cursor-pointer"
           >
             Kyra Sobel Media
           </Link>
@@ -58,7 +58,7 @@ export default function Header() {
             <li>
               <button
                 onClick={() => scrollToSection('home')}
-                className={`transition-colors ${
+                className={`transition-colors cursor-pointer ${
                   activeSection === 'home'
                     ? 'text-gray-900 font-semibold'
                     : 'text-gray-600 hover:text-gray-900'
@@ -70,7 +70,7 @@ export default function Header() {
             <li>
               <button
                 onClick={() => scrollToSection('about')}
-                className={`transition-colors ${
+                className={`transition-colors cursor-pointer ${
                   activeSection === 'about'
                     ? 'text-gray-900 font-semibold'
                     : 'text-gray-600 hover:text-gray-900'
@@ -82,7 +82,7 @@ export default function Header() {
             <li>
               <button
                 onClick={() => scrollToSection('work')}
-                className={`transition-colors ${
+                className={`transition-colors cursor-pointer ${
                   activeSection === 'work'
                     ? 'text-gray-900 font-semibold'
                     : 'text-gray-600 hover:text-gray-900'
@@ -94,7 +94,7 @@ export default function Header() {
             <li>
               <Link
                 href="/resume"
-                className="text-gray-600 hover:text-gray-900 transition-colors"
+                className="text-gray-600 hover:text-gray-900 transition-colors cursor-pointer"
               >
                 Resume
               </Link>
@@ -102,7 +102,7 @@ export default function Header() {
             <li>
               <Link
                 href="/blog"
-                className="text-gray-600 hover:text-gray-900 transition-colors"
+                className="text-gray-600 hover:text-gray-900 transition-colors cursor-pointer"
               >
                 Blog
               </Link>
@@ -110,7 +110,7 @@ export default function Header() {
             <li>
               <button
                 onClick={() => scrollToSection('contact')}
-                className={`transition-colors ${
+                className={`transition-colors cursor-pointer ${
                   activeSection === 'contact'
                     ? 'text-gray-900 font-semibold'
                     : 'text-gray-600 hover:text-gray-900'
@@ -121,7 +121,7 @@ export default function Header() {
             </li>
           </ul>
           <button
-            className="md:hidden text-gray-900"
+            className="md:hidden text-gray-900 cursor-pointer"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             aria-label="Toggle menu"
           >
@@ -157,7 +157,7 @@ export default function Header() {
                   scrollToSection('home')
                   setIsMobileMenuOpen(false)
                 }}
-                className={`block w-full text-left transition-colors ${
+                className={`block w-full text-left transition-colors cursor-pointer ${
                   activeSection === 'home'
                     ? 'text-gray-900 font-semibold'
                     : 'text-gray-600 hover:text-gray-900'
@@ -172,7 +172,7 @@ export default function Header() {
                   scrollToSection('about')
                   setIsMobileMenuOpen(false)
                 }}
-                className={`block w-full text-left transition-colors ${
+                className={`block w-full text-left transition-colors cursor-pointer ${
                   activeSection === 'about'
                     ? 'text-gray-900 font-semibold'
                     : 'text-gray-600 hover:text-gray-900'
@@ -187,7 +187,7 @@ export default function Header() {
                   scrollToSection('work')
                   setIsMobileMenuOpen(false)
                 }}
-                className={`block w-full text-left transition-colors ${
+                className={`block w-full text-left transition-colors cursor-pointer ${
                   activeSection === 'work'
                     ? 'text-gray-900 font-semibold'
                     : 'text-gray-600 hover:text-gray-900'
@@ -200,7 +200,7 @@ export default function Header() {
               <Link
                 href="/resume"
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="block text-gray-600 hover:text-gray-900 transition-colors"
+                className="block text-gray-600 hover:text-gray-900 transition-colors cursor-pointer"
               >
                 Resume
               </Link>
@@ -209,7 +209,7 @@ export default function Header() {
               <Link
                 href="/blog"
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="block text-gray-600 hover:text-gray-900 transition-colors"
+                className="block text-gray-600 hover:text-gray-900 transition-colors cursor-pointer"
               >
                 Blog
               </Link>
@@ -220,7 +220,7 @@ export default function Header() {
                   scrollToSection('contact')
                   setIsMobileMenuOpen(false)
                 }}
-                className={`block w-full text-left transition-colors ${
+                className={`block w-full text-left transition-colors cursor-pointer ${
                   activeSection === 'contact'
                     ? 'text-gray-900 font-semibold'
                     : 'text-gray-600 hover:text-gray-900'

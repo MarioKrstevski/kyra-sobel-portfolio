@@ -44,7 +44,7 @@ export default function Contact() {
                   <p className="font-semibold text-gray-900 mb-1">Email</p>
                   <a
                     href="mailto:kyrasobel@outlook.com"
-                    className="text-blue-600 hover:text-blue-800 hover:underline"
+                    className="text-blue-600 hover:text-blue-800 hover:underline cursor-pointer"
                   >
                     kyrasobel@outlook.com
                   </a>
@@ -60,7 +60,7 @@ export default function Contact() {
                       href="https://www.linkedin.com/in/kyra-sobel-742162174/"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-gray-600 hover:text-gray-900 transition-colors"
+                      className="text-gray-600 hover:text-gray-900 transition-colors cursor-pointer"
                       aria-label="LinkedIn"
                     >
                       <svg
@@ -75,7 +75,7 @@ export default function Contact() {
                       href="https://www.instagram.com/ksobesphotos"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-gray-600 hover:text-gray-900 transition-colors"
+                      className="text-gray-600 hover:text-gray-900 transition-colors cursor-pointer"
                       aria-label="Instagram"
                     >
                       <svg
@@ -151,7 +151,7 @@ export default function Contact() {
                 </div>
                 <button
                   type="submit"
-                  className="w-full px-8 py-3 bg-gray-900 text-white rounded-lg hover:bg-gray-800 transition-colors font-medium"
+                  className="w-full px-8 py-3 bg-gray-900 text-white rounded-lg hover:bg-gray-800 transition-colors font-medium cursor-pointer"
                 >
                   Send Message
                 </button>
@@ -160,7 +160,7 @@ export default function Contact() {
                   email{' '}
                   <a
                     href="mailto:kyrasobel@outlook.com"
-                    className="text-blue-600 hover:underline"
+                    className="text-blue-600 hover:underline cursor-pointer"
                   >
                     kyrasobel@outlook.com
                   </a>

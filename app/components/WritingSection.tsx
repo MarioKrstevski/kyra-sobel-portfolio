@@ -21,7 +21,17 @@ export default function WritingSection() {
                 {article.title}
               </h4>
               <p className="text-gray-600 mb-1">{article.publication}</p>
-              <p className="text-sm text-gray-500">{article.year}</p>
+              <p className="text-sm text-gray-500 mb-3">{article.year}</p>
+              {article.url && article.url !== '#' && (
+                <a
+                  href={article.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block px-4 py-2 bg-gray-900 text-white rounded hover:bg-gray-800 transition-colors text-sm font-medium cursor-pointer"
+                >
+                  View Article
+                </a>
+              )}
             </div>
           ))}
         </div>
@@ -41,7 +51,17 @@ export default function WritingSection() {
                 {project.title}
               </h4>
               <p className="text-gray-600 mb-1">{project.client}</p>
-              <p className="text-sm text-gray-500">{project.year}</p>
+              <p className="text-sm text-gray-500 mb-3">{project.year}</p>
+              {project.url && project.url !== '#' && (
+                <a
+                  href={project.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block px-4 py-2 bg-gray-900 text-white rounded hover:bg-gray-800 transition-colors text-sm font-medium cursor-pointer"
+                >
+                  View Project
+                </a>
+              )}
             </div>
           ))}
         </div>

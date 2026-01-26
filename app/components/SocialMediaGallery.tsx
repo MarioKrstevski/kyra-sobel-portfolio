@@ -15,16 +15,18 @@ export default function SocialMediaGallery() {
         {socialMediaSamples.map((sample) => (
           <div
             key={sample.id}
-            className="relative aspect-square cursor-pointer group overflow-hidden rounded-lg"
+            className="relative aspect-square cursor-pointer group overflow-hidden rounded-lg bg-gray-200"
             onClick={() => setSelectedImage(sample.image)}
           >
             <Image
               src={sample.image}
               alt={sample.description}
               fill
-              className="object-cover group-hover:scale-110 transition-transform duration-300"
+              className="object-cover group-hover:scale-110 transition-transform duration-300 z-[1]"
+              sizes="(max-width: 768px) 50vw, 25vw"
+              priority={sample.id <= 2}
             />
-            <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300 flex items-center justify-center">
+            <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300 flex items-center justify-center z-0 pointer-events-none">
               <p className="text-white opacity-0 group-hover:opacity-100 transition-opacity text-sm text-center px-2">
                 {sample.client}
               </p>
@@ -48,7 +50,7 @@ export default function SocialMediaGallery() {
               href={link.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="block text-blue-600 hover:text-blue-800 hover:underline"
+              className="block text-blue-600 hover:text-blue-800 hover:underline cursor-pointer"
             >
               → {link.title}
             </a>
@@ -58,24 +60,30 @@ export default function SocialMediaGallery() {
 
       {selectedImage && (
         <div
-          className="fixed inset-0 bg-black bg-opacity-90 z-50 flex items-center justify-center p-4"
+          className="fixed inset-0 bg-black bg-opacity-90 z-50 flex items-center justify-center p-4 cursor-pointer"
           onClick={() => setSelectedImage(null)}
         >
-          <div className="relative max-w-4xl max-h-full">
+          <div className="relative w-full h-full flex items-center justify-center overflow-hidden">
             <button
-              onClick={() => setSelectedImage(null)}
-              className="absolute top-4 right-4 text-white text-2xl hover:text-gray-300 z-10"
+              onClick={(e) => {
+                e.stopPropagation()
+                setSelectedImage(null)
+              }}
+              className="absolute top-4 right-4 text-white text-2xl hover:text-gray-300 z-10 bg-black bg-opacity-50 rounded-full w-10 h-10 flex items-center justify-center cursor-pointer"
               aria-label="Close"
             >
               ×
             </button>
-            <Image
-              src={selectedImage}
-              alt="Social media sample"
-              width={1200}
-              height={1200}
-              className="max-w-full max-h-[90vh] object-contain"
-            />
+            <div className="relative max-w-full max-h-full w-full h-full flex items-center justify-center">
+              <Image
+                src={selectedImage}
+                alt="Social media sample"
+                width={1200}
+                height={1200}
+                className="max-w-full max-h-full w-auto h-auto object-contain"
+                sizes="90vw"
+              />
+            </div>
           </div>
         </div>
       )}

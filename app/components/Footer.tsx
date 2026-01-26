@@ -16,25 +16,25 @@ export default function Footer() {
             <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
             <ul className="space-y-2 text-gray-400">
               <li>
-                <a href="#about" className="hover:text-white transition-colors">
+                <a href="#about" className="hover:text-white transition-colors cursor-pointer">
                   About
                 </a>
               </li>
               <li>
-                <a href="#work" className="hover:text-white transition-colors">
+                <a href="#work" className="hover:text-white transition-colors cursor-pointer">
                   Work
                 </a>
               </li>
               <li>
                 <Link
                   href="/resume"
-                  className="hover:text-white transition-colors"
+                  className="hover:text-white transition-colors cursor-pointer"
                 >
                   Resume
                 </Link>
               </li>
               <li>
-                <Link href="/blog" className="hover:text-white transition-colors">
+                <Link href="/blog" className="hover:text-white transition-colors cursor-pointer">
                   Blog
                 </Link>
               </li>
@@ -46,7 +46,7 @@ export default function Footer() {
               <li>
                 <a
                   href="mailto:kyrasobel@outlook.com"
-                  className="hover:text-white transition-colors"
+                  className="hover:text-white transition-colors cursor-pointer"
                 >
                   kyrasobel@outlook.com
                 </a>
@@ -57,7 +57,7 @@ export default function Footer() {
                   href="https://www.linkedin.com/in/kyra-sobel-742162174/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="hover:text-white transition-colors"
+                  className="hover:text-white transition-colors cursor-pointer"
                   aria-label="LinkedIn"
                 >
                   <svg
@@ -72,7 +72,7 @@ export default function Footer() {
                   href="https://www.instagram.com/ksobesphotos"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="hover:text-white transition-colors"
+                  className="hover:text-white transition-colors cursor-pointer"
                   aria-label="Instagram"
                 >
                   <svg
