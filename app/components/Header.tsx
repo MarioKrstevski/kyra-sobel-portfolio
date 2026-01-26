@@ -74,7 +74,7 @@ export default function Header() {
         isScrolled || isMobileMenuOpen ? 'bg-white shadow-md' : 'bg-transparent'
       }`}
     >
-      <nav className="container mx-auto px-4 py-4 w-full">
+      <nav className=" mx-auto px-2 sm:px-6 lg:px-8 py-4 w-full">
         <div className="flex items-center justify-between ">
           <Link
             href="/"
@@ -94,7 +94,7 @@ export default function Header() {
               className="w-12 h-12 md:w-14 md:h-14"
               priority
             />
-            <span className="text-2xl font-bold text-gray-900 hidden sm:block">
+            <span className=" font-bold text-gray-900 text-base sm:text-2xl sm:block">
               Kyra Sobel Media
             </span>
           </Link>

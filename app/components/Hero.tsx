@@ -13,7 +13,7 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-50 to-white px-4 pt-20"
+      className="min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-50 to-white px-6 pt-20"
     >
       <div className="container mx-auto max-w-6xl">
         <div className="grid md:grid-cols-2 gap-12 items-center">
