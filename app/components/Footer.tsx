@@ -1,6 +1,24 @@
+'use client'
+
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 
 export default function Footer() {
+  const pathname = usePathname()
+  const isHomePage = pathname === '/'
+
+  const scrollToSection = (sectionId: string) => {
+    if (isHomePage) {
+      const element = document.getElementById(sectionId)
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth', block: 'start' })
+      }
+    } else {
+      // Navigate to home with hash - use window.location for proper hash handling
+      window.location.href = `/#${sectionId}`
+    }
+  }
+
   return (
     <footer className="bg-gray-900 text-white py-12 px-4">
       <div className="container mx-auto max-w-6xl">
@@ -16,14 +34,20 @@ export default function Footer() {
             <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
             <ul className="space-y-2 text-gray-400">
               <li>
-                <a href="#about" className="hover:text-white transition-colors cursor-pointer">
+                <button
+                  onClick={() => scrollToSection('about')}
+                  className="hover:text-white transition-colors cursor-pointer text-left"
+                >
                   About
-                </a>
+                </button>
               </li>
               <li>
-                <a href="#work" className="hover:text-white transition-colors cursor-pointer">
+                <button
+                  onClick={() => scrollToSection('work')}
+                  className="hover:text-white transition-colors cursor-pointer text-left"
+                >
                   Work
-                </a>
+                </button>
               </li>
               <li>
                 <Link
