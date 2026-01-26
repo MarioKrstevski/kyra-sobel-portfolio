@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import Image from 'next/image'
 import { usePathname } from 'next/navigation'
 
 export default function Footer() {
@@ -24,7 +25,16 @@ export default function Footer() {
       <div className="container mx-auto max-w-6xl">
         <div className="grid md:grid-cols-3 gap-8">
           <div>
-            <h3 className="text-2xl font-bold mb-4">Kyra Sobel Media</h3>
+            <div className="flex items-center gap-3 mb-4">
+              <Image
+                src="/resources/Website Assets & Logos/LOGO 7.png"
+                alt="Kyra Sobel Media Logo"
+                width={60}
+                height={60}
+                className="w-12 h-12 md:w-16 md:h-16"
+              />
+              <h3 className="text-2xl font-bold">Kyra Sobel Media</h3>
+            </div>
             <p className="text-gray-400">
               Authentic storytelling through photography, journalism, and social
               media.

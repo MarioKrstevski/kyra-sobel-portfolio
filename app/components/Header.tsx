@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import Image from 'next/image'
 import { usePathname, useRouter } from 'next/navigation'
 import { useState, useEffect } from 'react'
 
@@ -83,9 +84,19 @@ export default function Header() {
                 scrollToSection('home')
               }
             }}
-            className="text-2xl font-bold text-gray-900 hover:text-gray-700 transition-colors cursor-pointer"
+            className="flex items-center gap-3 hover:opacity-80 transition-opacity cursor-pointer"
           >
-            Kyra Sobel Media
+            <Image
+              src="/resources/Website Assets & Logos/LOGO 7.png"
+              alt="Kyra Sobel Media Logo"
+              width={50}
+              height={50}
+              className="w-12 h-12 md:w-14 md:h-14"
+              priority
+            />
+            <span className="text-2xl font-bold text-gray-900 hidden sm:block">
+              Kyra Sobel Media
+            </span>
           </Link>
           <ul className="hidden md:flex items-center space-x-8">
             <li>
