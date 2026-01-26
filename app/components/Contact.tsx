@@ -145,6 +145,7 @@ export default function Contact() {
                       setFormData({ ...formData, message: e.target.value })
                     }
                     rows={6}
+                    placeholder="Please describe your project, including scope, timeline, and any specific requirements or goals you have in mind..."
                     className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-900 focus:border-transparent"
                     required
                   />
