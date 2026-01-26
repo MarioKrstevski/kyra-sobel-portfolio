@@ -42,8 +42,8 @@ export default function Header() {
         isScrolled || isMobileMenuOpen ? 'bg-white shadow-md' : 'bg-transparent'
       }`}
     >
-      <nav className="container mx-auto px-4 py-4">
-        <div className="flex items-center justify-between">
+      <nav className="container mx-auto px-4 py-4 w-full">
+        <div className="flex items-center justify-between ">
           <Link
             href="/"
             onClick={(e) => {

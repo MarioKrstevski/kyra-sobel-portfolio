@@ -11,7 +11,7 @@ export default function WritingSection() {
         <h3 className="text-3xl font-bold text-gray-900 mb-6">
           Writing & Published Articles
         </h3>
-        <div className="space-y-6">
+        <div className="grid grid-cols-1 min-[900px]:grid-cols-2 gap-6">
           {writingSamples.map((article) => (
             <div
               key={article.id}
@@ -41,7 +41,7 @@ export default function WritingSection() {
         <h3 className="text-3xl font-bold text-gray-900 mb-6">
           Digital Multimedia Projects
         </h3>
-        <div className="space-y-6">
+        <div className="grid grid-cols-1 min-[900px]:grid-cols-2 gap-6">
           {multimediaProjects.map((project) => (
             <div
               key={project.id}
