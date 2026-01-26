@@ -1,9 +1,13 @@
 'use client'
 
 import Link from 'next/link'
+import { usePathname, useRouter } from 'next/navigation'
 import { useState, useEffect } from 'react'
 
 export default function Header() {
+  const pathname = usePathname()
+  const router = useRouter()
+  const isHomePage = pathname === '/'
   const [activeSection, setActiveSection] = useState('home')
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
@@ -12,27 +16,54 @@ export default function Header() {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50)
 
-      // Update active section based on scroll position
-      const sections = ['home', 'about', 'work', 'clients', 'contact']
-      const current = sections.find((section) => {
-        const element = document.getElementById(section)
-        if (element) {
-          const rect = element.getBoundingClientRect()
-          return rect.top <= 100 && rect.bottom >= 100
-        }
-        return false
-      })
-      if (current) setActiveSection(current)
+      // Only update active section if on home page
+      if (isHomePage) {
+        const sections = ['home', 'about', 'work', 'clients', 'contact']
+        const current = sections.find((section) => {
+          const element = document.getElementById(section)
+          if (element) {
+            const rect = element.getBoundingClientRect()
+            return rect.top <= 100 && rect.bottom >= 100
+          }
+          return false
+        })
+        if (current) setActiveSection(current)
+      }
     }
 
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
+  }, [isHomePage])
+
+  // Handle scrolling to section on initial load or direct navigation with hash
+  useEffect(() => {
+    if (isHomePage) {
+      const hash = window.location.hash.substring(1)
+      if (hash) {
+        // Wait for page to fully render, then scroll
+        const scrollToHash = () => {
+          const element = document.getElementById(hash)
+          if (element) {
+            element.scrollIntoView({ behavior: 'smooth', block: 'start' })
+          }
+        }
+        // Use requestAnimationFrame to ensure DOM is ready
+        requestAnimationFrame(() => {
+          setTimeout(scrollToHash, 200)
+        })
+      }
+    }
+  }, [isHomePage])
 
   const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId)
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    if (isHomePage) {
+      const element = document.getElementById(sectionId)
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth', block: 'start' })
+      }
+    } else {
+      // Navigate to home with hash - use window.location for proper hash handling
+      window.location.href = `/#${sectionId}`
     }
   }
 
@@ -47,8 +78,10 @@ export default function Header() {
           <Link
             href="/"
             onClick={(e) => {
-              e.preventDefault()
-              scrollToSection('home')
+              if (isHomePage) {
+                e.preventDefault()
+                scrollToSection('home')
+              }
             }}
             className="text-2xl font-bold text-gray-900 hover:text-gray-700 transition-colors cursor-pointer"
           >
@@ -64,7 +97,7 @@ export default function Header() {
                     : 'text-gray-600 hover:text-gray-900'
                 }`}
               >
-                Home
+                {isHomePage ? 'Home' : 'Go Home'}
               </button>
             </li>
             <li>
@@ -163,7 +196,7 @@ export default function Header() {
                     : 'text-gray-600 hover:text-gray-900'
                 }`}
               >
-                Home
+                {isHomePage ? 'Home' : 'Go Home'}
               </button>
             </li>
             <li>
