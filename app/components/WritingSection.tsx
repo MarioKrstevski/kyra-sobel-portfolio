@@ -27,7 +27,7 @@ export default function WritingSection() {
                   href={article.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-block px-4 py-2 bg-gray-900 text-white rounded hover:bg-gray-800 transition-colors text-sm font-medium cursor-pointer"
+                  className="inline-block px-2 py-1 bg-gray-900 text-xs text-white rounded hover:bg-gray-800 transition-colors text-sm font-medium cursor-pointer"
                 >
                   View Article
                 </a>
@@ -57,7 +57,7 @@ export default function WritingSection() {
                   href={project.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-block px-4 py-2 bg-gray-900 text-white rounded hover:bg-gray-800 transition-colors text-sm font-medium cursor-pointer"
+                  className="inline-block px-2 py-1 bg-gray-900 text-xs text-white rounded hover:bg-gray-800 transition-colors text-sm font-medium cursor-pointer"
                 >
                   View Project
                 </a>

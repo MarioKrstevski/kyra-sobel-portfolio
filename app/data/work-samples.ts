@@ -94,28 +94,28 @@ export const writingSamples = [
     title: 'Repairing the Poplar Community One Piece of Food at a Time',
     publication: 'Philadelphia Neighborhoods',
     year: '2021',
-    url: '#',
+    url: 'https://philadelphianeighborhoods.com/2021/10/28/poplar-repairing-the-poplar-community-one-piece-of-food-at-a-time/',
   },
   {
     id: 2,
     title: 'Ready to Fly Program Prepares First-Gen Students for Success',
     publication: 'Temple University College of Education and Human Development',
     year: '2021',
-    url: '#',
+    url: 'https://education.temple.edu/news/2021/07/ready-fly-program-prepares-first-gen-students-success',
   },
   {
     id: 3,
     title: 'Paving a Path in Professional Health Education',
     publication: 'Temple University College of Education and Human Development',
     year: '2021',
-    url: '#',
+    url: 'https://education.temple.edu/news/2021/10/paving-path-professional-health-education',
   },
   {
     id: 4,
     title: 'Faculty Spotlight: Charles A. Price',
     publication: 'Temple University College of Education and Human Development',
     year: '2021',
-    url: '#',
+    url: 'https://education.temple.edu/news/2021/03/faculty-spotlight-charles-price',
   },
 ]
 
@@ -125,21 +125,21 @@ export const multimediaProjects = [
     title: 'The 10 Birds of World Migratory Bird Day 2023',
     client: 'Paulson Institute',
     year: '2023',
-    url: '#',
+    url: 'https://www.paulsoninstitute.org/conservation/conservation-blog/the-10-birds-of-world-migratory-bird-day-2023/',
   },
   {
     id: 2,
     title: 'Invest in Nature',
     client: 'Paulson Institute',
     year: '2023',
-    url: '#',
+    url: 'https://youtu.be/qGhVSwi_3KE?si=okfhTbFQqhnm8DT4',
   },
   {
     id: 3,
     title: 'Answering the Basic Questions of Green Hydrogen',
     client: 'Paulson Institute',
     year: '2024',
-    url: '#',
+    url: 'https://youtu.be/GUxNe7A7spg?si=pXpfUC2urBSOoNwp',
   },
 ]
 
