@@ -73,7 +73,13 @@ export default function SocialMediaGallery ({ paulsonLinks, samples }: SocialMed
         </div>
       </div>
 
-     seo changes
+      {selectedImage && (
+        <ImageModal
+          src={selectedImage}
+          alt={sampleSet.find((s) => s.image === selectedImage)?.description ?? 'Social media sample'}
+          onClose={() => setSelectedImage(null)}
+        />
+      )}
     </ScrollAnimation>
   )
 }
