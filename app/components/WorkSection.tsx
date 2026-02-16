@@ -1,9 +1,11 @@
 'use client'
 
+import Link from 'next/link'
 import SocialMediaGallery from './SocialMediaGallery'
 import PhotographyGallery from './PhotographyGallery'
 import WritingSection from './WritingSection'
 import ScrollAnimation from './ScrollAnimation'
+import { paulsonInstituteLinksFull } from '../data/work-samples'
 
 export default function WorkSection() {
   return (
@@ -19,10 +21,21 @@ export default function WorkSection() {
         </ScrollAnimation>
 
         <div className="space-y-16">
-          <SocialMediaGallery />
+          <SocialMediaGallery paulsonLinks={paulsonInstituteLinksFull.slice(0, 2)} />
           <PhotographyGallery />
           <WritingSection />
         </div>
+
+        <ScrollAnimation>
+          <div className="mt-12 text-center">
+            <Link
+              href="/work"
+              className="inline-block px-6 py-3 bg-gray-900 text-white rounded-lg hover:bg-gray-800 transition-colors font-medium cursor-pointer"
+            >
+              View full work portfolio →
+            </Link>
+          </div>
+        </ScrollAnimation>
       </div>
     </section>
   )

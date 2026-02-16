@@ -3,7 +3,18 @@
 import { writingSamples, multimediaProjects } from '../data/work-samples'
 import ScrollAnimation from './ScrollAnimation'
 
-export default function WritingSection() {
+type WritingArticle = { id: number; title: string; publication: string; year: string; url: string }
+type MultimediaProject = { id: number; title: string; client: string; year: string; url: string }
+
+type WritingSectionProps = {
+  writing?: WritingArticle[]
+  multimedia?: MultimediaProject[]
+}
+
+export default function WritingSection ({ writing, multimedia }: WritingSectionProps) {
+  const articles = writing ?? writingSamples
+  const projects = multimedia ?? multimediaProjects
+
   return (
     <ScrollAnimation>
       <div className="space-y-12">
@@ -12,7 +23,7 @@ export default function WritingSection() {
           Writing & Published Articles
         </h3>
         <div className="grid grid-cols-1 min-[900px]:grid-cols-2 gap-6">
-          {writingSamples.map((article) => (
+          {articles.map((article) => (
             <div
               key={article.id}
               className="border-l-4 border-gray-300 pl-6 py-2 hover:border-gray-900 transition-colors"
@@ -42,7 +53,7 @@ export default function WritingSection() {
           Digital Multimedia Projects
         </h3>
         <div className="grid grid-cols-1 min-[900px]:grid-cols-2 gap-6">
-          {multimediaProjects.map((project) => (
+          {projects.map((project) => (
             <div
               key={project.id}
               className="border-l-4 border-gray-300 pl-6 py-2 hover:border-gray-900 transition-colors"

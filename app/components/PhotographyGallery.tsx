@@ -5,14 +5,21 @@ import { photographySamples } from '../data/work-samples'
 import { useState } from 'react'
 import ScrollAnimation from './ScrollAnimation'
 
-export default function PhotographyGallery() {
+type PhotoSample = { id: number; image: string; category: string }
+
+type PhotographyGalleryProps = {
+  photos?: PhotoSample[]
+}
+
+export default function PhotographyGallery ({ photos }: PhotographyGalleryProps) {
+  const list = photos ?? photographySamples
   const [selectedImage, setSelectedImage] = useState<string | null>(null)
 
   return (
     <ScrollAnimation>
       <h3 className="text-3xl font-bold text-gray-900 mb-6">Photography Portfolio</h3>
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-        {photographySamples.map((photo) => (
+        {list.map((photo) => (
           <div
             key={photo.id}
             className="relative aspect-square cursor-pointer group overflow-hidden rounded-lg bg-gray-200"

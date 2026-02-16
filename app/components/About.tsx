@@ -15,24 +15,22 @@ export default function About() {
           </h2>
           <div className="prose prose-lg max-w-none text-gray-700">
             <p className="text-lg leading-relaxed mb-6">
-              Kyra Sobel is a Chicago-based freelance journalist and
-              photographer, editor, social media manager and creative
-              storyteller. She is a proud graduate of Temple University in
-              Philadelphia, PA and holds a Bachelor of Arts in Journalism and
-              a minor in Political Science.
+              I&apos;m a Chicago-based freelance journalist and photographer,
+              editor, social media manager, and creative storyteller. I&apos;m a
+              proud graduate of Temple University in Philadelphia, PA and hold a
+              Bachelor of Arts in Journalism and a minor in Political Science.
             </p>
             <p className="text-lg leading-relaxed mb-6">
               With a versatile background that includes experience as a podcast
               producer, video editor, on-air broadcast talent, and marketing and
-              social media manager, she brings a well-rounded, thoughtful
-              approach to any communications project.
+              social media manager, I bring a well-rounded, thoughtful approach
+              to any communications project.
             </p>
             <p className="text-lg leading-relaxed">
-              Kyra&apos;s work ethic, curiosity, and commitment to growth allow her
-              to excel across all areas of the field. She is driven by
-              authenticity and integrity to highlight stories that affect her
-              community, and she seeks to make complex issues clear for everyday
-              readers.
+              My work ethic, curiosity, and commitment to growth allow me to excel
+              across all areas of the field. I&apos;m driven by authenticity and
+              integrity to highlight stories that affect my community, and I seek
+              to make complex issues clear for everyday readers.
             </p>
           </div>
           <div className="mt-12 grid md:grid-cols-3 gap-8">

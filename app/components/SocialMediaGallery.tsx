@@ -5,14 +5,26 @@ import { socialMediaSamples, paulsonInstituteLinks } from '../data/work-samples'
 import { useState } from 'react'
 import ScrollAnimation from './ScrollAnimation'
 
-export default function SocialMediaGallery() {
+type PaulsonLink = { id: number; url: string; title: string }
+
+export type SocialMediaSample = { id: number; image: string; client: string; description: string }
+
+type SocialMediaGalleryProps = {
+  paulsonLinks?: PaulsonLink[]
+  /** Custom images to show; when omitted, homepage shows first 4 */
+  samples?: SocialMediaSample[]
+}
+
+export default function SocialMediaGallery ({ paulsonLinks, samples }: SocialMediaGalleryProps) {
+  const links = paulsonLinks ?? paulsonInstituteLinks
+  const sampleSet = samples ?? socialMediaSamples
   const [selectedImage, setSelectedImage] = useState<string | null>(null)
 
   return (
     <ScrollAnimation>
       <h3 className="text-3xl font-bold text-gray-900 mb-6">Social Media Samples</h3>
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
-        {socialMediaSamples.map((sample) => (
+        {sampleSet.map((sample) => (
           <div
             key={sample.id}
             className="relative aspect-square cursor-pointer group overflow-hidden rounded-lg bg-gray-200"
@@ -44,7 +56,7 @@ export default function SocialMediaGallery() {
           sustainability communications.
         </p>
         <div className="space-y-2">
-          {paulsonInstituteLinks.map((link) => (
+          {links.map((link) => (
             <a
               key={link.id}
               href={link.url}

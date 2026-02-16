@@ -9,6 +9,7 @@ export default function Header() {
   const pathname = usePathname()
   const router = useRouter()
   const isHomePage = pathname === '/'
+  const isWorkPage = pathname === '/work'
   const [activeSection, setActiveSection] = useState('home')
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
@@ -87,7 +88,7 @@ export default function Header() {
             className="flex items-center gap-3 hover:opacity-80 transition-opacity cursor-pointer"
           >
             <Image
-              src="/resources/Website Assets & Logos/LOGO 7.png"
+              src="/resources/WebsiteAssetsAndLogos/LOGO-7.png"
               alt="Kyra Sobel Media Logo"
               width={50}
               height={50}
@@ -124,16 +125,16 @@ export default function Header() {
               </button>
             </li>
             <li>
-              <button
-                onClick={() => scrollToSection('work')}
+              <Link
+                href="/work"
                 className={`transition-colors cursor-pointer ${
-                  activeSection === 'work'
+                  isWorkPage || (isHomePage && activeSection === 'work')
                     ? 'text-gray-900 font-semibold'
                     : 'text-gray-600 hover:text-gray-900'
                 }`}
               >
                 My Work
-              </button>
+              </Link>
             </li>
             <li>
               <Link
@@ -226,19 +227,17 @@ export default function Header() {
               </button>
             </li>
             <li>
-              <button
-                onClick={() => {
-                  scrollToSection('work')
-                  setIsMobileMenuOpen(false)
-                }}
+              <Link
+                href="/work"
+                onClick={() => setIsMobileMenuOpen(false)}
                 className={`block w-full text-left transition-colors cursor-pointer ${
-                  activeSection === 'work'
+                  isWorkPage || (isHomePage && activeSection === 'work')
                     ? 'text-gray-900 font-semibold'
                     : 'text-gray-600 hover:text-gray-900'
                 }`}
               >
                 My Work
-              </button>
+              </Link>
             </li>
             <li>
               <Link

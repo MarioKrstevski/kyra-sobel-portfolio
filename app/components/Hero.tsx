@@ -86,7 +86,7 @@ export default function Hero() {
           <div className="flex justify-center md:justify-end">
             <div className="relative w-80 h-80 md:w-96 md:h-96 rounded-full overflow-hidden shadow-2xl">
               <Image
-                src="/resources/Website Assets & Logos/Headshots/Kyra Sobel Headshot-2.jpg"
+                src="/resources/WebsiteAssetsAndLogos/Headshots/Kyra-Sobel-Headshot-2.jpg"
                 alt="Kyra Sobel"
                 fill
                 className="object-cover"
