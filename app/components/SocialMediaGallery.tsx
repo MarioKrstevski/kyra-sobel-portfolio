@@ -4,6 +4,7 @@ import Image from 'next/image'
 import { socialMediaSamples, paulsonInstituteLinks } from '../data/work-samples'
 import { useState } from 'react'
 import ScrollAnimation from './ScrollAnimation'
+import ImageModal from './ImageModal'
 
 type PaulsonLink = { id: number; url: string; title: string }
 
@@ -25,10 +26,12 @@ export default function SocialMediaGallery ({ paulsonLinks, samples }: SocialMed
       <h3 className="text-3xl font-bold text-gray-900 mb-6">Social Media Samples</h3>
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
         {sampleSet.map((sample) => (
-          <div
+          <button
+            type="button"
             key={sample.id}
-            className="relative aspect-square cursor-pointer group overflow-hidden rounded-lg bg-gray-200"
+            className="relative aspect-square cursor-pointer group overflow-hidden rounded-lg bg-gray-200 w-full border-0 p-0 text-left"
             onClick={() => setSelectedImage(sample.image)}
+            aria-label={`View ${sample.client}: ${sample.description}`}
           >
             <Image
               src={sample.image}
@@ -43,7 +46,7 @@ export default function SocialMediaGallery ({ paulsonLinks, samples }: SocialMed
                 {sample.client}
               </p>
             </div>
-          </div>
+          </button>
         ))}
       </div>
 
@@ -71,33 +74,11 @@ export default function SocialMediaGallery ({ paulsonLinks, samples }: SocialMed
       </div>
 
       {selectedImage && (
-        <div
-          className="fixed inset-0 bg-black bg-opacity-90 z-50 flex items-center justify-center p-4 cursor-pointer"
-          onClick={() => setSelectedImage(null)}
-        >
-          <div className="relative w-full h-full flex items-center justify-center overflow-hidden">
-            <button
-              onClick={(e) => {
-                e.stopPropagation()
-                setSelectedImage(null)
-              }}
-              className="absolute top-4 right-4 text-white text-2xl hover:text-gray-300 z-10 bg-black bg-opacity-50 rounded-full w-10 h-10 flex items-center justify-center cursor-pointer"
-              aria-label="Close"
-            >
-              ×
-            </button>
-            <div className="relative max-w-full max-h-full w-full h-full flex items-center justify-center">
-              <Image
-                src={selectedImage}
-                alt="Social media sample"
-                width={1200}
-                height={1200}
-                className="max-w-full max-h-full w-auto h-auto object-contain"
-                sizes="90vw"
-              />
-            </div>
-          </div>
-        </div>
+        <ImageModal
+          src={selectedImage}
+          alt={sampleSet.find((s) => s.image === selectedImage)?.description ?? 'Social media sample'}
+          onClose={() => setSelectedImage(null)}
+        />
       )}
     </ScrollAnimation>
   )

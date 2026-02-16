@@ -4,6 +4,7 @@ import Image from 'next/image'
 import { photographySamples } from '../data/work-samples'
 import { useState } from 'react'
 import ScrollAnimation from './ScrollAnimation'
+import ImageModal from './ImageModal'
 
 type PhotoSample = { id: number; image: string; category: string }
 
@@ -20,10 +21,12 @@ export default function PhotographyGallery ({ photos }: PhotographyGalleryProps)
       <h3 className="text-3xl font-bold text-gray-900 mb-6">Photography Portfolio</h3>
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
         {list.map((photo) => (
-          <div
+          <button
+            type="button"
             key={photo.id}
-            className="relative aspect-square cursor-pointer group overflow-hidden rounded-lg bg-gray-200"
+            className="relative aspect-square cursor-pointer group overflow-hidden rounded-lg bg-gray-200 w-full border-0 p-0 text-left"
             onClick={() => setSelectedImage(photo.image)}
+            aria-label={`View ${photo.category} photography`}
           >
             <Image
               src={photo.image}
@@ -38,38 +41,16 @@ export default function PhotographyGallery ({ photos }: PhotographyGalleryProps)
                 {photo.category}
               </p>
             </div>
-          </div>
+          </button>
         ))}
       </div>
 
       {selectedImage && (
-        <div
-          className="fixed inset-0 bg-black bg-opacity-90 z-50 flex items-center justify-center p-4 cursor-pointer"
-          onClick={() => setSelectedImage(null)}
-        >
-          <div className="relative w-full h-full flex items-center justify-center overflow-hidden">
-            <button
-              onClick={(e) => {
-                e.stopPropagation()
-                setSelectedImage(null)
-              }}
-              className="absolute top-4 right-4 text-white text-2xl hover:text-gray-300 z-10 bg-black bg-opacity-50 rounded-full w-10 h-10 flex items-center justify-center cursor-pointer"
-              aria-label="Close"
-            >
-              ×
-            </button>
-            <div className="relative max-w-full max-h-full w-full h-full flex items-center justify-center">
-              <Image
-                src={selectedImage}
-                alt="Photography sample"
-                width={2000}
-                height={2000}
-                className="max-w-full max-h-full w-auto h-auto object-contain"
-                sizes="90vw"
-              />
-            </div>
-          </div>
-        </div>
+        <ImageModal
+          src={selectedImage}
+          alt={list.find((p) => p.image === selectedImage)?.category ?? 'Photography sample'}
+          onClose={() => setSelectedImage(null)}
+        />
       )}
     </ScrollAnimation>
   )
