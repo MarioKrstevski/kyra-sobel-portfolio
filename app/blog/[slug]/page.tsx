@@ -1,3 +1,4 @@
+import type { Metadata } from 'next'
 import Header from '../../components/Header'
 import Footer from '../../components/Footer'
 import BlogPostComponent from '../../components/BlogPost'
@@ -9,14 +10,40 @@ interface BlogPostPageProps {
   params: Promise<{ slug: string }>
 }
 
-export async function generateStaticParams() {
+export async function generateStaticParams () {
   const posts = getAllBlogPosts()
   return posts.map((post) => ({
     slug: post.slug,
   }))
 }
 
-export default async function BlogPostPage({ params }: BlogPostPageProps) {
+export async function generateMetadata ({ params }: BlogPostPageProps): Promise<Metadata> {
+  const { slug } = await params
+  const post = getBlogPostBySlug(slug)
+  if (!post) return {}
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://kyrasobelmedia.com'
+  return {
+    title: post.title,
+    description: post.excerpt,
+    openGraph: {
+      title: post.title,
+      description: post.excerpt,
+      type: 'article',
+      publishedTime: post.date,
+      authors: [post.author],
+      url: `${siteUrl}/blog/${post.slug}`,
+      images: post.featuredImage ? [{ url: post.featuredImage, alt: post.title }] : undefined,
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: post.title,
+      description: post.excerpt,
+    },
+    alternates: { canonical: `${siteUrl}/blog/${post.slug}` },
+  }
+}
+
+export default async function BlogPostPage ({ params }: BlogPostPageProps) {
   const { slug } = await params
   const post = getBlogPostBySlug(slug)
 

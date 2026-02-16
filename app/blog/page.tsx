@@ -3,7 +3,16 @@ import Footer from '../components/Footer'
 import BlogCard from '../components/BlogCard'
 import { getAllBlogPosts } from '../data/blog-posts'
 
-export default function BlogPage() {
+export const metadata = {
+  title: 'Blog',
+  description: 'Insights on photography, journalism, social media, and authentic storytelling from Kyra Sobel.',
+  openGraph: {
+    title: 'Blog | Kyra Sobel Media',
+    description: 'Insights on photography, journalism, social media, and authentic storytelling.',
+  },
+}
+
+export default function BlogPage () {
   const posts = getAllBlogPosts()
 
   return (

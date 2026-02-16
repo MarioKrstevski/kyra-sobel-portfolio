@@ -1,7 +1,16 @@
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 
-export default function ResumePage() {
+export const metadata = {
+  title: 'Resume',
+  description: 'Kyra Sobel resume: education, journalism, photography, social media management, and content creation experience.',
+  openGraph: {
+    title: 'Resume | Kyra Sobel Media',
+    description: 'Education, journalism, photography, and social media management experience.',
+  },
+}
+
+export default function ResumePage () {
   return (
     <>
       <Header />

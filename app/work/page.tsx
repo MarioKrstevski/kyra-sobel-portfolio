@@ -7,8 +7,12 @@ import ScrollAnimation from '../components/ScrollAnimation'
 import { paulsonInstituteLinksFull, writingSamplesFull, multimediaProjectsFull, photographySamplesFull, socialMediaSamplesFull } from '../data/work-samples'
 
 export const metadata = {
-  title: 'My Work | Kyra Sobel Media',
+  title: 'My Work',
   description: 'Social media samples, photography portfolio, writing and published articles, and digital multimedia projects.',
+  openGraph: {
+    title: 'My Work | Kyra Sobel Media',
+    description: 'Social media samples, photography portfolio, writing and published articles, and digital multimedia projects.',
+  },
 }
 
 export default function WorkPage() {
