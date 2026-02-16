@@ -27,7 +27,7 @@ export default function Footer() {
           <div>
             <div className="flex items-center gap-3 mb-4">
               <Image
-                src="/resources/Website Assets & Logos/LOGO 7.png"
+                src="/resources/WebsiteAssetsAndLogos/LOGO-7.png"
                 alt="Kyra Sobel Media Logo"
                 width={60}
                 height={60}

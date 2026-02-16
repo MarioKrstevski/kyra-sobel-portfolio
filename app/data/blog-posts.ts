@@ -54,7 +54,7 @@ As I continue to grow in this field, I'm constantly reminded that the best work 
     readingTime: '5 min read',
     category: 'Photography',
     tags: ['Photography', 'Journalism', 'Storytelling', 'Chicago'],
-    featuredImage: '/resources/Website Assets & Logos/Website Photography Samples/DSC_0547.jpg',
+    featuredImage: '/resources/WebsiteAssetsAndLogos/WebsitePhotographySamples/1.jpg',
   },
 ]
 

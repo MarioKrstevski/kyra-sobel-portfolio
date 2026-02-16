@@ -24,12 +24,12 @@ export default function SocialMediaGallery ({ paulsonLinks, samples }: SocialMed
   return (
     <ScrollAnimation>
       <h3 className="text-3xl font-bold text-gray-900 mb-6">Social Media Samples</h3>
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-1 mb-12">
         {sampleSet.map((sample) => (
           <button
             type="button"
             key={sample.id}
-            className="relative aspect-square cursor-pointer group overflow-hidden rounded-lg bg-gray-200 w-full border-0 p-0 text-left"
+            className="relative aspect-square cursor-pointer group overflow-hidden rounded-sm bg-gray-200 w-full border-0 p-0 text-left"
             onClick={() => setSelectedImage(sample.image)}
             aria-label={`View ${sample.client}: ${sample.description}`}
           >
@@ -73,13 +73,7 @@ export default function SocialMediaGallery ({ paulsonLinks, samples }: SocialMed
         </div>
       </div>
 
-      {selectedImage && (
-        <ImageModal
-          src={selectedImage}
-          alt={sampleSet.find((s) => s.image === selectedImage)?.description ?? 'Social media sample'}
-          onClose={() => setSelectedImage(null)}
-        />
-      )}
+     seo changes
     </ScrollAnimation>
   )
 }

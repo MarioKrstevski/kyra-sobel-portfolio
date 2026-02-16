@@ -77,7 +77,7 @@ export default function ImageModal ({ src, alt, onClose }: ImageModalProps) {
       />
       <div
         ref={modalRef}
-        className="relative z-10 flex max-h-[90vh] max-w-[90vw] flex-col rounded-2xl bg-gray-900 shadow-2xl ring-1 ring-white/10 overflow-hidden"
+        className="relative z-10 flex max-h-[90vh] max-w-[90vw] flex-col rounded-sm bg-gray-900 shadow-2xl ring-1 ring-white/10 overflow-hidden"
         onClick={(e) => e.stopPropagation()}
       >
         <div className="flex shrink-0 items-center justify-between gap-4 border-b border-white/10 px-4 py-3">

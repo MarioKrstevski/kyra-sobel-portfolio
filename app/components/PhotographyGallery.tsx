@@ -19,7 +19,7 @@ export default function PhotographyGallery ({ photos }: PhotographyGalleryProps)
   return (
     <ScrollAnimation>
       <h3 className="text-3xl font-bold text-gray-900 mb-6">Photography Portfolio</h3>
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-1">
         {list.map((photo) => (
           <button
             type="button"

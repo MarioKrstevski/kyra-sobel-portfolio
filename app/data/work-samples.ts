@@ -4,11 +4,11 @@ const templePub = 'Temple University College of Education and Human Development'
 
 // --- Social media (images): full list, homepage uses first 4 ---
 export const socialMediaSamplesFull = [
-  { id: 1, image: '/resources/WebsiteAssetsAndLogos/Social Media Examples/social-media-graphic-2.png', client: 'Paulson Institute', description: 'Social media content creation' },
-  { id: 2, image: '/resources/WebsiteAssetsAndLogos/Social Media Examples/social-media-graphic-4.png', client: 'Paulson Institute', description: 'Engaging visual storytelling' },
-  { id: 3, image: '/resources/WebsiteAssetsAndLogos/Social Media Examples/social-media-graphic-5.png', client: 'Paulson Institute', description: 'Brand awareness campaign' },
-  { id: 4, image: '/resources/WebsiteAssetsAndLogos/Social Media Examples/social-media-graphic-6.png', client: 'Paulson Institute', description: 'Content strategy and design' },
-  { id: 5, image: '/resources/WebsiteAssetsAndLogos/Social Media Examples/social-media-graphic-8.png', client: 'Paulson Institute', description: 'Content strategy and design' },
+  { id: 1, image: '/resources/WebsiteAssetsAndLogos/SocialMediaExamples/social-media-graphic-2.png', client: 'Paulson Institute', description: 'Social media content creation' },
+  { id: 2, image: '/resources/WebsiteAssetsAndLogos/SocialMediaExamples/social-media-graphic-4.png', client: 'Paulson Institute', description: 'Engaging visual storytelling' },
+  { id: 3, image: '/resources/WebsiteAssetsAndLogos/SocialMediaExamples/social-media-graphic-5.png', client: 'Paulson Institute', description: 'Brand awareness campaign' },
+  { id: 4, image: '/resources/WebsiteAssetsAndLogos/SocialMediaExamples/social-media-graphic-6.png', client: 'Paulson Institute', description: 'Content strategy and design' },
+  { id: 5, image: '/resources/WebsiteAssetsAndLogos/SocialMediaExamples/social-media-graphic-8.png', client: 'Paulson Institute', description: 'Content strategy and design' },
 ]
 export const socialMediaSamples = socialMediaSamplesFull.slice(0, 4)
 
@@ -26,7 +26,7 @@ export const paulsonInstituteLinksFull = [
 export const paulsonInstituteLinks = paulsonInstituteLinksFull.slice(0, 3)
 
 // --- Photography: full list (all files in folder, simple filenames 1.jpg–31.jpg), homepage uses first 8 ---
-const photoBase = '/resources/WebsiteAssetsAndLogos/Website Photography Samples'
+const photoBase = '/resources/WebsiteAssetsAndLogos/WebsitePhotographySamples'
 const photoCategories = ['Editorial', 'Event', 'Portrait', 'Editorial', 'Event', 'Portrait', 'Editorial', 'Event']
 export const photographySamplesFull = Array.from({ length: 31 }, (_, i) => ({
   id: i + 1,
