@@ -16,6 +16,9 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Kyra Sobel Media | Social Media Manager | Multimedia Journalist | Photographer",
   description: "Chicago-based freelance journalist, photographer, editor, and social media manager. Specializing in authentic storytelling and creative communications.",
+  icons: {
+    icon: '/resources/WebsiteAssetsAndLogos/LOGO-7.png',
+  },
 };
 
 export default function RootLayout({
