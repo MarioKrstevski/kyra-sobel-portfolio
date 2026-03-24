@@ -1,0 +1,40 @@
+# Deploys the OpenNext bundle to the Worker named in wrangler.jsonc.
+# Build alone does not replace the default "Hello world" worker — deploy must run.
+# GitHub repo → Settings → Secrets: CLOUDFLARE_API_TOKEN
+# (Create at dash.cloudflare.com → My Profile → API Tokens → Edit Cloudflare Workers template.)
+# If deploy fails with “Could not resolve account”, add CLOUDFLARE_ACCOUNT_ID here as env.
+name: Deploy Worker (OpenNext)
+
+on:
+  push:
+    branches: [main, master]
+  workflow_dispatch: {}
+
+concurrency:
+  group: deploy-cloudflare-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 9
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: pnpm
+
+      - name: Install
+        run: pnpm install --frozen-lockfile
+
+      - name: Build & deploy OpenNext
+        run: pnpm exec opennextjs-cloudflare build && pnpm exec opennextjs-cloudflare deploy
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
