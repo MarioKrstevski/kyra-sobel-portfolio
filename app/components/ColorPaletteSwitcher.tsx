@@ -39,7 +39,7 @@ export default function ColorPaletteSwitcher () {
     <div
       className="pointer-events-auto fixed bottom-4 left-4 z-[9998] max-w-[min(100vw-2rem,18rem)] rounded-lg border border-stone-300 bg-stone-50 text-xs text-stone-800 shadow-lg"
       role="region"
-      aria-label="Color palette preview"
+      aria-label="Color theme"
     >
       <div className="flex items-center justify-between gap-2 border-b border-stone-200 px-2 py-1.5 sm:px-3">
         <button
@@ -81,9 +81,7 @@ export default function ColorPaletteSwitcher () {
           className="flex flex-col gap-2 p-3 pt-2"
         >
           <p className="text-[11px] leading-snug text-stone-600">
-            Remove{' '}
-            <code className="rounded bg-stone-200 px-1">ColorPaletteSwitcher</code>{' '}
-            from layout when done.
+            Pick a color theme. Your choice is saved on this device.
           </p>
           <div className="flex flex-col gap-1.5" role="group" aria-label="Choose palette">
             {COLOR_PALETTES.map((p) => {

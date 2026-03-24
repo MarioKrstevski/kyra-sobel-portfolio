@@ -74,9 +74,7 @@ export default function RootLayout ({
     >
       <body className="antialiased font-sans text-foreground">
         {children}
-        {process.env.NODE_ENV === 'development' ? (
-          <ColorPaletteSwitcher />
-        ) : null}
+        <ColorPaletteSwitcher />
       </body>
     </html>
   )
