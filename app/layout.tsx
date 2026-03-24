@@ -1,16 +1,14 @@
 import type { Metadata } from 'next'
-import { Fraunces, Source_Sans_3 } from 'next/font/google'
+import { Figtree, Fraunces } from 'next/font/google'
 import './globals.css'
 import './styles/animations.css'
 
-// Body: Source Sans 3 — clear, warm, professional on screen
-const sourceSans = Source_Sans_3({
-  variable: '--font-source-sans',
+const figtree = Figtree({
+  variable: '--font-figtree',
   subsets: ['latin'],
   weight: ['400', '500', '600', '700'],
 })
 
-// Headings: Fraunces — soft editorial serif (journalism / storytelling)
 const fraunces = Fraunces({
   variable: '--font-fraunces',
   subsets: ['latin'],
@@ -61,18 +59,16 @@ export const metadata: Metadata = {
   alternates: { canonical: siteUrl },
 }
 
-export default function RootLayout({
+export default function RootLayout ({
   children,
 }: Readonly<{
-  children: React.ReactNode;
+  children: React.ReactNode
 }>) {
   return (
-    <html lang="en">
-      <body
-        className={`${sourceSans.variable} ${fraunces.variable} antialiased font-sans`}
-      >
+    <html lang="en" className={`${figtree.variable} ${fraunces.variable}`}>
+      <body className="antialiased font-sans">
         {children}
       </body>
     </html>
-  );
+  )
 }

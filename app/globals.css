@@ -3,13 +3,16 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  /* Figtree (body/UI) + Fraunces (headings) — variables from next/font in layout.tsx */
+  --font-active-body: var(--font-figtree);
+  --font-active-heading: var(--font-fraunces);
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-source-sans);
-  --font-serif: var(--font-fraunces);
+  --font-sans: var(--font-active-body);
+  --font-serif: var(--font-active-heading);
 }
 
 html {
@@ -19,7 +22,7 @@ html {
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-source-sans), ui-sans-serif, system-ui, sans-serif;
+  font-family: var(--font-active-body), ui-sans-serif, system-ui, sans-serif;
 }
 
 h1,
@@ -28,5 +31,5 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: var(--font-fraunces), Georgia, 'Times New Roman', serif;
+  font-family: var(--font-active-heading), Georgia, 'Times New Roman', serif;
 }
