@@ -62,50 +62,66 @@ export default function ImageModal ({ src, alt, onClose }: ImageModalProps) {
     return () => window.removeEventListener('keydown', handleKeyDown)
   }, [handleKeyDown])
 
+  const titleText = alt.trim() || 'Image'
+
   const modal = (
     <div
-      className="fixed inset-0 z-50 flex items-center justify-center p-4"
+      className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-8"
       role="dialog"
       aria-modal="true"
       aria-labelledby="image-modal-title"
-      aria-describedby="image-modal-desc"
     >
       <div
-        className="absolute inset-0 bg-black/80 backdrop-blur-sm"
+        className="absolute inset-0 bg-black/70 backdrop-blur-sm"
         onClick={onClose}
         aria-hidden="true"
       />
+
       <div
         ref={modalRef}
-        className="relative z-10 flex max-h-[90vh] max-w-[90vw] flex-col rounded-sm bg-gray-900 shadow-2xl ring-1 ring-white/10 overflow-hidden"
+        className="relative z-10 flex w-full max-w-2xl flex-col overflow-hidden rounded-sm bg-gray-900 shadow-2xl ring-1 ring-white/10"
         onClick={(e) => e.stopPropagation()}
       >
-        <div className="flex shrink-0 items-center justify-between gap-4 border-b border-white/10 px-4 py-3">
-          <span id="image-modal-title" className="sr-only">
-            Image view
-          </span>
-          <p id="image-modal-desc" className="text-sm text-gray-400 truncate flex-1 min-w-0" title={alt}>
-            {alt}
+        <div className="flex shrink-0 items-center justify-between gap-3 border-b border-black/10 bg-primary px-4 py-2.5 text-primary-contrast">
+          <p
+            id="image-modal-title"
+            className="min-w-0 flex-1 truncate text-sm text-primary-contrast/95"
+            title={titleText}
+          >
+            {titleText}
           </p>
           <button
             ref={closeButtonRef}
             type="button"
             onClick={onClose}
-            className="shrink-0 rounded-full p-2 text-gray-400 hover:bg-white/10 hover:text-white transition-colors focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-900"
-            aria-label="Close modal"
+            className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg text-primary-contrast transition hover:bg-primary-hover focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-contrast/50 focus-visible:ring-offset-2 focus-visible:ring-offset-primary"
+            aria-label="Close"
           >
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              aria-hidden="true"
+            >
               <path d="M18 6 6 18" />
               <path d="m6 6 12 12" />
             </svg>
           </button>
         </div>
-        <div
-          className={`relative flex items-center justify-center p-4 ${!imageLoaded ? 'min-h-[50vh]' : ''}`}
-        >
+
+        <div className="relative flex items-center justify-center bg-black/45 p-4">
           {!imageLoaded && (
-            <div className="absolute inset-0 flex items-center justify-center bg-gray-800/50" aria-hidden="true">
-              <div className="h-10 w-10 animate-spin rounded-full border-2 border-gray-600 border-t-white" />
+            <div
+              className="absolute inset-0 z-10 flex items-center justify-center bg-black/30"
+              aria-hidden="true"
+            >
+              <div className="h-8 w-8 animate-spin rounded-full border-2 border-zinc-600 border-t-white" />
             </div>
           )}
           <Image
@@ -113,9 +129,9 @@ export default function ImageModal ({ src, alt, onClose }: ImageModalProps) {
             alt={alt}
             width={1200}
             height={1200}
-            className="max-h-[75vh] w-auto max-w-full object-contain transition-opacity duration-200"
+            className="max-h-[min(70vh,720px)] w-auto max-w-full object-contain transition-opacity duration-200"
             style={{ opacity: imageLoaded ? 1 : 0 }}
-            sizes="90vw"
+            sizes="(max-width: 672px) 90vw, 640px"
             onLoad={() => setImageLoaded(true)}
           />
         </div>

@@ -21,7 +21,7 @@ export default function Footer() {
   }
 
   return (
-    <footer className="bg-gray-900 text-white py-12 px-4">
+    <footer className="bg-footer-bg text-footer-text py-12 px-4">
       <div className="container mx-auto max-w-6xl">
         <div className="grid md:grid-cols-3 gap-8">
           <div>
@@ -33,20 +33,24 @@ export default function Footer() {
                 height={60}
                 className="w-12 h-12 md:w-16 md:h-16"
               />
-              <h3 className="text-2xl font-bold">Kyra Sobel Media</h3>
+              <h3 className="text-2xl font-bold text-footer-text">
+                Kyra Sobel Media
+              </h3>
             </div>
-            <p className="text-gray-400">
+            <p className="text-footer-muted">
               Authentic storytelling through photography, journalism, and social
               media.
             </p>
           </div>
           <div>
-            <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
-            <ul className="space-y-2 text-gray-400">
+            <h4 className="text-lg font-semibold mb-4 text-footer-text">
+              Quick Links
+            </h4>
+            <ul className="space-y-2 text-footer-muted">
               <li>
                 <button
                   onClick={() => scrollToSection('about')}
-                  className="hover:text-white transition-colors cursor-pointer text-left"
+                  className="hover:text-footer-text transition-colors cursor-pointer text-left"
                 >
                   About
                 </button>
@@ -54,7 +58,7 @@ export default function Footer() {
               <li>
                 <button
                   onClick={() => scrollToSection('work')}
-                  className="hover:text-white transition-colors cursor-pointer text-left"
+                  className="hover:text-footer-text transition-colors cursor-pointer text-left"
                 >
                   Work
                 </button>
@@ -62,7 +66,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/resume"
-                  className="hover:text-white transition-colors cursor-pointer"
+                  className="hover:text-footer-text transition-colors cursor-pointer"
                 >
                   Resume
                 </Link>
@@ -70,12 +74,14 @@ export default function Footer() {
             </ul>
           </div>
           <div>
-            <h4 className="text-lg font-semibold mb-4">Contact</h4>
-            <ul className="space-y-2 text-gray-400">
+            <h4 className="text-lg font-semibold mb-4 text-footer-text">
+              Contact
+            </h4>
+            <ul className="space-y-2 text-footer-muted">
               <li>
                 <a
                   href="mailto:kyrasobel@outlook.com"
-                  className="hover:text-white transition-colors cursor-pointer"
+                  className="hover:text-footer-text transition-colors cursor-pointer"
                 >
                   kyrasobel@outlook.com
                 </a>
@@ -86,7 +92,7 @@ export default function Footer() {
                   href="https://www.linkedin.com/in/kyra-sobel-742162174/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="hover:text-white transition-colors cursor-pointer"
+                  className="hover:text-footer-text transition-colors cursor-pointer"
                   aria-label="LinkedIn"
                 >
                   <svg
@@ -101,7 +107,7 @@ export default function Footer() {
                   href="https://www.instagram.com/ksobesphotos"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="hover:text-white transition-colors cursor-pointer"
+                  className="hover:text-footer-text transition-colors cursor-pointer"
                   aria-label="Instagram"
                 >
                   <svg
@@ -116,7 +122,7 @@ export default function Footer() {
             </ul>
           </div>
         </div>
-        <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+        <div className="border-t border-white/10 mt-8 pt-8 text-center text-footer-muted">
           <p>&copy; {new Date().getFullYear()} Kyra Sobel Media. All rights reserved.</p>
         </div>
       </div>

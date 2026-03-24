@@ -12,10 +12,10 @@ export default function Clients() {
     >
       <div className="container mx-auto max-w-6xl">
         <ScrollAnimation>
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-12 text-center">
+          <h2 className="text-4xl md:text-5xl font-bold text-heading mb-12 text-center">
             Clients
           </h2>
-          <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
+          <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
             I&apos;ve had the privilege of working with amazing organizations and
             publications, creating content that makes a difference.
           </p>
@@ -23,7 +23,7 @@ export default function Clients() {
             {clients.map((client) => (
               <div
                 key={client.id}
-                className="flex items-center justify-center p-6 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors w-full cursor-pointer"
+                className="flex items-center justify-center p-6 bg-card rounded-lg border border-border hover:bg-band transition-colors w-full cursor-pointer"
               >
                 <Image
                   src={client.logo}

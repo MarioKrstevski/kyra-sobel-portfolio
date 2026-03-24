@@ -13,25 +13,25 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-50 to-white px-6 pt-20"
+      className="min-h-screen flex items-center justify-center bg-gradient-to-br from-[var(--hero-from)] to-[var(--hero-to)] px-6 pt-20"
     >
       <div className="container mx-auto max-w-6xl">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div className="text-center md:text-left">
-            <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-4">
+            <h1 className="text-5xl md:text-6xl font-bold text-heading mb-4">
               Kyra Sobel
             </h1>
-            <p className="text-xl md:text-2xl text-gray-600 mb-2">
+            <p className="text-xl md:text-2xl text-muted-foreground mb-2">
               Social Media Manager
             </p>
-            <p className="text-xl md:text-2xl text-gray-600 mb-2">
+            <p className="text-xl md:text-2xl text-muted-foreground mb-2">
               Multimedia Journalist
             </p>
-            <p className="text-xl md:text-2xl text-gray-600 mb-6">
+            <p className="text-xl md:text-2xl text-muted-foreground mb-6">
               Freelance Photographer
             </p>
-            <p className="text-lg text-gray-700 mb-2">📍 Chicago-based</p>
-            <p className="text-base text-gray-600 mb-8 max-w-xl">
+            <p className="text-lg text-foreground mb-2">📍 Chicago-based</p>
+            <p className="text-base text-muted-foreground mb-8 max-w-xl">
               Authentic storytelling through photography, journalism, and social
               media. Bringing a well-rounded, thoughtful approach to every
               communications project.
@@ -39,13 +39,13 @@ export default function Hero() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
               <button
                 onClick={() => scrollToSection('work')}
-                className="px-8 py-3 bg-gray-900 text-white rounded-full hover:bg-gray-800 transition-colors font-medium cursor-pointer"
+                className="px-8 py-3 bg-primary text-primary-contrast rounded-full hover:bg-primary-hover transition-colors font-medium cursor-pointer"
               >
                 View My Work
               </button>
               <button
                 onClick={() => scrollToSection('contact')}
-                className="px-8 py-3 border-2 border-gray-900 text-gray-900 rounded-full hover:bg-gray-900 hover:text-white transition-colors font-medium cursor-pointer"
+                className="px-8 py-3 border-2 border-primary text-primary rounded-full hover:bg-primary hover:text-primary-contrast transition-colors font-medium cursor-pointer"
               >
                 Get In Touch
               </button>
@@ -55,7 +55,7 @@ export default function Hero() {
                 href="https://www.linkedin.com/in/kyra-sobel-742162174/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-600 hover:text-gray-900 transition-colors cursor-pointer"
+                className="text-muted-foreground hover:text-heading transition-colors cursor-pointer"
                 aria-label="LinkedIn"
               >
                 <svg
@@ -70,7 +70,7 @@ export default function Hero() {
                 href="https://www.instagram.com/ksobesphotos"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-600 hover:text-gray-900 transition-colors cursor-pointer"
+                className="text-muted-foreground hover:text-heading transition-colors cursor-pointer"
                 aria-label="Instagram"
               >
                 <svg

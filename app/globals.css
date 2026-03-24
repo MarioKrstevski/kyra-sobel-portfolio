@@ -1,16 +1,319 @@
 @import "tailwindcss";
 
+/*
+  Warm, low-contrast palettes — typography and layout lead; color supports.
+  Switch with data-color-palette on <html> (see ColorPaletteSwitcher, layout).
+*/
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-  /* Figtree (body/UI) + Fraunces (headings) — variables from next/font in layout.tsx */
   --font-active-body: var(--font-figtree);
   --font-active-heading: var(--font-fraunces);
+}
+
+/* Default = paper */
+:root,
+html[data-color-palette="paper"] {
+  --background: #faf8f5;
+  --foreground: #3d3a37;
+  --heading: #32302d;
+  --muted-foreground: #6b6660;
+  --caption: #8a847c;
+  --hero-from: #fcfaf7;
+  --hero-to: #f2ece3;
+  --about-bg: #efe8de;
+  --muted-bg: #e7e2da;
+  --primary: #4a4540;
+  --primary-hover: #3d3934;
+  --primary-contrast: #faf8f5;
+  --link: #556368;
+  --link-hover: #3e4547;
+  --border: #e0dbd3;
+  --border-strong: #b8b3ab;
+  --card-bg: #f3f0ea;
+  --placeholder-bg: #d9d4cc;
+  --footer-bg: #1c1916;
+  --footer-muted: #c4bfb6;
+  --footer-text: #faf7f2;
+}
+
+html[data-color-palette="atmosphere"] {
+  --background: #f5f3f0;
+  --foreground: #363330;
+  --heading: #2c2a27;
+  --muted-foreground: #6a665f;
+  --caption: #827c75;
+  --hero-from: #faf8f5;
+  --hero-to: #ebe7e0;
+  --about-bg: #e8e4dc;
+  --muted-bg: #ded9d1;
+  --primary: #42403c;
+  --primary-hover: #353330;
+  --primary-contrast: #faf8f5;
+  --link: #4f5c5c;
+  --link-hover: #3a4444;
+  --border: #d9d4cc;
+  --border-strong: #a8a39a;
+  --card-bg: #edeae3;
+  --placeholder-bg: #cfcac2;
+  --footer-bg: #1a1815;
+  --footer-muted: #beb8af;
+  --footer-text: #faf8f4;
+}
+
+/* Warm stone — balanced warm gray (original palette) */
+html[data-color-palette="stone"] {
+  --background: #f7f6f3;
+  --foreground: #383632;
+  --heading: #2f2e2b;
+  --muted-foreground: #6a6762;
+  --caption: #86827c;
+  --hero-from: #faf9f7;
+  --hero-to: #efede9;
+  --about-bg: #e9e6e0;
+  --muted-bg: #e1ded7;
+  --primary: #45423e;
+  --primary-hover: #383633;
+  --primary-contrast: #faf9f7;
+  --link: #545c5e;
+  --link-hover: #3a4042;
+  --border: #d9d5ce;
+  --border-strong: #b5b0a8;
+  --card-bg: #efede8;
+  --placeholder-bg: #d5d0c8;
+  --footer-bg: #1a1815;
+  --footer-muted: #beb8af;
+  --footer-text: #faf8f4;
+}
+
+/* Linen light — airy minimal (original palette) */
+html[data-color-palette="linen"] {
+  --background: #faf9f7;
+  --foreground: #3a3835;
+  --heading: #2f2d2a;
+  --muted-foreground: #6c6863;
+  --caption: #86827d;
+  --hero-from: #fdfcfa;
+  --hero-to: #f7f5f0;
+  --about-bg: #f2efe8;
+  --muted-bg: #eae7e0;
+  --primary: #474440;
+  --primary-hover: #3a3734;
+  --primary-contrast: #fdfcfa;
+  --link: #576064;
+  --link-hover: #3f4649;
+  --border: #e4e0d8;
+  --border-strong: #c4bfb6;
+  --card-bg: #f5f3ee;
+  --placeholder-bg: #dbd6cd;
+  --footer-bg: #1f1b18;
+  --footer-muted: #c4b9b2;
+  --footer-text: #faf5f0;
+}
+
+/* Cool mist — subtle blue-gray, still light */
+html[data-color-palette="mist"] {
+  --background: #f6f8fa;
+  --foreground: #3a3d42;
+  --heading: #2f3236;
+  --muted-foreground: #656b72;
+  --caption: #7e848c;
+  --hero-from: #f9fbfd;
+  --hero-to: #eef2f6;
+  --about-bg: #e6eaef;
+  --muted-bg: #dde2e8;
+  --primary: #3d454d;
+  --primary-hover: #323840;
+  --primary-contrast: #f7f9fb;
+  --link: #4d5f72;
+  --link-hover: #3a4858;
+  --border: #d4dae2;
+  --border-strong: #a8b0bb;
+  --card-bg: #eef1f5;
+  --placeholder-bg: #cdd4dc;
+  --footer-bg: #15171b;
+  --footer-muted: #b4bac3;
+  --footer-text: #f4f7fb;
+}
+
+/* Sage wash — muted green-gray */
+html[data-color-palette="sage"] {
+  --background: #f7f9f6;
+  --foreground: #383b37;
+  --heading: #2e312e;
+  --muted-foreground: #636a63;
+  --caption: #7c847c;
+  --hero-from: #fafcf8;
+  --hero-to: #ecf0ea;
+  --about-bg: #e4eae2;
+  --muted-bg: #d9e0d6;
+  --primary: #3d453f;
+  --primary-hover: #323a35;
+  --primary-contrast: #f8faf7;
+  --link: #4f6356;
+  --link-hover: #3d4d43;
+  --border: #d0d8ce;
+  --border-strong: #a3ada0;
+  --card-bg: #eef2ec;
+  --placeholder-bg: #c8d0c4;
+  --footer-bg: #161917;
+  --footer-muted: #b5bcb4;
+  --footer-text: #f5faf4;
+}
+
+/* Sea glass — blue-green whisper */
+html[data-color-palette="seafoam"] {
+  --background: #f6faf9;
+  --foreground: #363a39;
+  --heading: #2c302f;
+  --muted-foreground: #626a68;
+  --caption: #7a8381;
+  --hero-from: #f8fcfb;
+  --hero-to: #e8f2f0;
+  --about-bg: #ddeae7;
+  --muted-bg: #d0deda;
+  --primary: #3d4745;
+  --primary-hover: #333c3a;
+  --primary-contrast: #f7fbfa;
+  --link: #4a6d68;
+  --link-hover: #3a5551;
+  --border: #cdd9d6;
+  --border-strong: #9eada9;
+  --card-bg: #eaf3f1;
+  --placeholder-bg: #c5d4d0;
+  --footer-bg: #141a19;
+  --footer-muted: #b0bbb9;
+  --footer-text: #f4faf8;
+}
+
+/* Dusk paper — barely lavender-gray */
+html[data-color-palette="dusk"] {
+  --background: #f7f6fa;
+  --foreground: #3a3840;
+  --heading: #2f2d36;
+  --muted-foreground: #686672;
+  --caption: #807e8a;
+  --hero-from: #faf9fc;
+  --hero-to: #eceaf3;
+  --about-bg: #e3e0eb;
+  --muted-bg: #d8d4e2;
+  --primary: #45424e;
+  --primary-hover: #3a3742;
+  --primary-contrast: #f8f7fb;
+  --link: #5a5870;
+  --link-hover: #45435a;
+  --border: #d4d0de;
+  --border-strong: #aba6b8;
+  --card-bg: #eeeaf4;
+  --placeholder-bg: #cdc8d8;
+  --footer-bg: #18161f;
+  --footer-muted: #bab6c4;
+  --footer-text: #f6f4fc;
+}
+
+/* Warm clay — dusty terracotta tint */
+html[data-color-palette="clay"] {
+  --background: #faf7f4;
+  --foreground: #3d3936;
+  --heading: #34302d;
+  --muted-foreground: #6d6762;
+  --caption: #887f79;
+  --hero-from: #fcf9f6;
+  --hero-to: #f0e9e3;
+  --about-bg: #ebe2dc;
+  --muted-bg: #e0d6d0;
+  --primary: #4d4540;
+  --primary-hover: #3f3935;
+  --primary-contrast: #faf7f4;
+  --link: #6b5e58;
+  --link-hover: #524845;
+  --border: #e0d5cf;
+  --border-strong: #b8aea8;
+  --card-bg: #f2ebe6;
+  --placeholder-bg: #d4cac4;
+  --footer-bg: #1f1b18;
+  --footer-muted: #c4b9b2;
+  --footer-text: #faf5f0;
+}
+
+/*
+  Ink — dark theme, same token roles as light palettes:
+  base page → hero gradient → about strip → band sections → footer darker.
+  Light text on dark ground; primary = light CTA with dark label.
+*/
+html[data-color-palette="ink"] {
+  --background: #11100f;
+  --foreground: #e6e4e0;
+  --heading: #f4f2ee;
+  --muted-foreground: #9e9a94;
+  --caption: #8a8680;
+  --hero-from: #151413;
+  --hero-to: #1b1a17;
+  --about-bg: #1e1d1a;
+  --muted-bg: #252421;
+  --primary: #e0dcd4;
+  --primary-hover: #d0ccc4;
+  --primary-contrast: #141312;
+  --link: #93b0b1;
+  --link-hover: #aec9ca;
+  --border: #2f2d2a;
+  --border-strong: #3f3c38;
+  --card-bg: #1a1916;
+  --placeholder-bg: #2e2c28;
+  --footer-bg: #0a0908;
+  --footer-muted: #8f8b85;
+  --footer-text: #f0eeea;
+  color-scheme: dark;
+}
+
+/*
+  Canvas — opposite of Ink: mostly white page, gray bands only where
+  --muted-bg is used (My Work, Get in touch, /work page). Same token layout as paper.
+*/
+html[data-color-palette="canvas"] {
+  --background: #fefefe;
+  --foreground: #2a2a2a;
+  --heading: #121212;
+  --muted-foreground: #6a6a6a;
+  --caption: #7d7d7d;
+  --hero-from: #ffffff;
+  --hero-to: #fafafa;
+  --about-bg: #ffffff;
+  --muted-bg: #e8e8e8;
+  --primary: #2c2c2c;
+  --primary-hover: #1a1a1a;
+  --primary-contrast: #ffffff;
+  --link: #4a6566;
+  --link-hover: #3a5152;
+  --border: #e6e6e6;
+  --border-strong: #bdbdbd;
+  --card-bg: #f3f3f3;
+  --placeholder-bg: #d8d8d8;
+  --footer-bg: #1c1916;
+  --footer-muted: #c4bfb6;
+  --footer-text: #faf7f2;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-heading: var(--heading);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-caption: var(--caption);
+  --color-primary: var(--primary);
+  --color-primary-hover: var(--primary-hover);
+  --color-primary-contrast: var(--primary-contrast);
+  --color-link: var(--link);
+  --color-link-hover: var(--link-hover);
+  --color-about: var(--about-bg);
+  --color-band: var(--muted-bg);
+  --color-page: var(--background);
+  --color-border: var(--border);
+  --color-border-strong: var(--border-strong);
+  --color-card: var(--card-bg);
+  --color-placeholder: var(--placeholder-bg);
+  --color-footer-bg: var(--footer-bg);
+  --color-footer-muted: var(--footer-muted);
+  --color-footer-text: var(--footer-text);
   --font-sans: var(--font-active-body);
   --font-serif: var(--font-active-heading);
 }
@@ -32,4 +335,5 @@ h4,
 h5,
 h6 {
   font-family: var(--font-active-heading), Georgia, 'Times New Roman', serif;
+  color: var(--heading);
 }

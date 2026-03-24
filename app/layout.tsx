@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { Figtree, Fraunces } from 'next/font/google'
+import ColorPaletteSwitcher from './components/ColorPaletteSwitcher'
 import './globals.css'
 import './styles/animations.css'
 
@@ -65,9 +66,17 @@ export default function RootLayout ({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className={`${figtree.variable} ${fraunces.variable}`}>
-      <body className="antialiased font-sans">
+    <html
+      lang="en"
+      className={`${figtree.variable} ${fraunces.variable}`}
+      data-color-palette="paper"
+      suppressHydrationWarning
+    >
+      <body className="antialiased font-sans text-foreground">
         {children}
+        {process.env.NODE_ENV === 'development' ? (
+          <ColorPaletteSwitcher />
+        ) : null}
       </body>
     </html>
   )

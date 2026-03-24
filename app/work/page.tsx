@@ -19,11 +19,11 @@ export default function WorkPage() {
   return (
     <>
       <Header />
-      <main className="pt-20 min-h-screen bg-gray-50">
-        <section className="py-20 px-4 bg-gray-50">
+      <main className="pt-20 min-h-screen bg-band">
+        <section className="py-20 px-4 bg-band">
           <div className="container mx-auto max-w-6xl">
             <ScrollAnimation>
-              <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-12 text-center">
+              <h1 className="text-4xl md:text-5xl font-bold text-heading mb-12 text-center">
                 My Work
               </h1>
             </ScrollAnimation>

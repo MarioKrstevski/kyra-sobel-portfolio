@@ -18,13 +18,13 @@ export default function PhotographyGallery ({ photos }: PhotographyGalleryProps)
 
   return (
     <ScrollAnimation>
-      <h3 className="text-3xl font-bold text-gray-900 mb-6">Photography Portfolio</h3>
+      <h3 className="text-3xl font-bold text-heading mb-6">Photography Portfolio</h3>
       <div className="grid grid-cols-2 md:grid-cols-4 gap-1">
         {list.map((photo) => (
           <button
             type="button"
             key={photo.id}
-            className="relative aspect-square cursor-pointer group overflow-hidden rounded-lg bg-gray-200 w-full border-0 p-0 text-left"
+            className="relative aspect-square cursor-pointer group overflow-hidden rounded-lg bg-placeholder w-full border-0 p-0 text-left"
             onClick={() => setSelectedImage(photo.image)}
             aria-label={`View ${photo.category} photography`}
           >

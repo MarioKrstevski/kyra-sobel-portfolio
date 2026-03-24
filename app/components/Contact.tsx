@@ -4,18 +4,18 @@ export default function Contact() {
   return (
     <section
       id="contact"
-      className="py-20 px-4 bg-gray-50"
+      className="py-20 px-4 bg-band"
     >
       <div className="container mx-auto max-w-4xl">
         <ScrollAnimation>
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-12 text-center">
+          <h2 className="text-4xl md:text-5xl font-bold text-heading mb-12 text-center">
             Get In Touch
           </h2>
           <div className="text-center mb-12">
-            <h3 className="text-2xl font-semibold text-gray-900 mb-4">
+            <h3 className="text-2xl font-semibold text-heading mb-4">
               Let&apos;s Work Together
             </h3>
-            <p className="text-gray-700">
+            <p className="text-foreground">
               Whether you&apos;re looking for social media management, photography
               services, or multimedia content creation, I&apos;d love to hear about
               your project.
@@ -23,27 +23,27 @@ export default function Contact() {
           </div>
           <div className="grid md:grid-cols-2 gap-12 items-start">
             <div>
-              <p className="font-semibold text-gray-900 mb-2">Email</p>
+              <p className="font-semibold text-heading mb-2">Email</p>
               <a
                 href="mailto:kyrasobel@outlook.com"
-                className="text-xl text-blue-600 hover:text-blue-800 hover:underline cursor-pointer"
+                className="text-xl text-link hover:text-link-hover hover:underline cursor-pointer"
               >
                 kyrasobel@outlook.com
               </a>
             </div>
             <div className="space-y-6">
               <div>
-                <p className="font-semibold text-gray-900 mb-1">Location</p>
-                <p className="text-gray-700">Chicago, IL</p>
+                <p className="font-semibold text-heading mb-1">Location</p>
+                <p className="text-foreground">Chicago, IL</p>
               </div>
               <div>
-                <p className="font-semibold text-gray-900 mb-3">Connect</p>
+                <p className="font-semibold text-heading mb-3">Connect</p>
                 <div className="flex gap-6">
                   <a
                     href="https://www.linkedin.com/in/kyra-sobel-742162174/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-gray-600 hover:text-gray-900 transition-colors cursor-pointer"
+                    className="text-muted-foreground hover:text-heading transition-colors cursor-pointer"
                     aria-label="LinkedIn"
                   >
                   <svg
@@ -58,7 +58,7 @@ export default function Contact() {
                     href="https://www.instagram.com/ksobesphotos"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-gray-600 hover:text-gray-900 transition-colors cursor-pointer"
+                    className="text-muted-foreground hover:text-heading transition-colors cursor-pointer"
                     aria-label="Instagram"
                   >
                   <svg

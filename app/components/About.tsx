@@ -6,14 +6,14 @@ export default function About() {
   return (
     <section
       id="about"
-      className="py-20 px-4 bg-white"
+      className="py-20 px-4 bg-about"
     >
       <div className="container mx-auto max-w-4xl">
         <ScrollAnimation>
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-8 text-center">
+          <h2 className="text-4xl md:text-5xl font-bold text-heading mb-8 text-center">
             About Me
           </h2>
-          <div className="prose prose-lg max-w-none text-gray-700">
+          <div className="prose prose-lg max-w-none text-foreground">
             <p className="text-lg leading-relaxed mb-6">
               I&apos;m a Chicago-based freelance journalist and photographer,
               editor, social media manager, and creative storyteller. I&apos;m a
@@ -35,27 +35,27 @@ export default function About() {
           </div>
           <div className="mt-12 grid md:grid-cols-3 gap-8">
             <div className="text-center">
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">
+              <h3 className="text-xl font-semibold text-heading mb-2">
                 Social Media Manager
               </h3>
-              <p className="text-gray-600">
+              <p className="text-muted-foreground">
                 Creating engaging content and building brand presence across
                 platforms
               </p>
             </div>
             <div className="text-center">
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">
+              <h3 className="text-xl font-semibold text-heading mb-2">
                 Multimedia Journalist
               </h3>
-              <p className="text-gray-600">
+              <p className="text-muted-foreground">
                 Telling stories through writing, video, and digital media
               </p>
             </div>
             <div className="text-center">
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">
+              <h3 className="text-xl font-semibold text-heading mb-2">
                 Freelance Photographer
               </h3>
-              <p className="text-gray-600">
+              <p className="text-muted-foreground">
                 Capturing authentic moments and visual narratives
               </p>
             </div>

@@ -72,7 +72,7 @@ export default function Header() {
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled || isMobileMenuOpen ? 'bg-white shadow-md' : 'bg-transparent'
+        isScrolled || isMobileMenuOpen ? 'bg-background/95 shadow-md backdrop-blur-sm' : 'bg-transparent'
       }`}
     >
       <nav className=" mx-auto px-2 sm:px-6 lg:px-8 py-4 w-full">
@@ -95,7 +95,7 @@ export default function Header() {
               className="w-12 h-12 md:w-14 md:h-14"
               priority
             />
-            <span className=" font-bold text-gray-900 text-base sm:text-2xl sm:block">
+            <span className=" font-bold text-heading text-base sm:text-2xl sm:block">
               Kyra Sobel Media
             </span>
           </Link>
@@ -105,8 +105,8 @@ export default function Header() {
                 onClick={() => scrollToSection('home')}
                 className={`transition-colors cursor-pointer ${
                   activeSection === 'home'
-                    ? 'text-gray-900 font-semibold'
-                    : 'text-gray-600 hover:text-gray-900'
+                    ? 'text-heading font-semibold'
+                    : 'text-muted-foreground hover:text-heading'
                 }`}
               >
                 {isHomePage ? 'Home' : 'Go Home'}
@@ -117,8 +117,8 @@ export default function Header() {
                 onClick={() => scrollToSection('about')}
                 className={`transition-colors cursor-pointer ${
                   activeSection === 'about'
-                    ? 'text-gray-900 font-semibold'
-                    : 'text-gray-600 hover:text-gray-900'
+                    ? 'text-heading font-semibold'
+                    : 'text-muted-foreground hover:text-heading'
                 }`}
               >
                 About Me
@@ -129,8 +129,8 @@ export default function Header() {
                 href="/work"
                 className={`transition-colors cursor-pointer ${
                   isWorkPage || (isHomePage && activeSection === 'work')
-                    ? 'text-gray-900 font-semibold'
-                    : 'text-gray-600 hover:text-gray-900'
+                    ? 'text-heading font-semibold'
+                    : 'text-muted-foreground hover:text-heading'
                 }`}
               >
                 My Work
@@ -139,7 +139,7 @@ export default function Header() {
             <li>
               <Link
                 href="/resume"
-                className="text-gray-600 hover:text-gray-900 transition-colors cursor-pointer"
+                className="text-muted-foreground hover:text-heading transition-colors cursor-pointer"
               >
                 Resume
               </Link>
@@ -149,8 +149,8 @@ export default function Header() {
                 onClick={() => scrollToSection('contact')}
                 className={`transition-colors cursor-pointer ${
                   activeSection === 'contact'
-                    ? 'text-gray-900 font-semibold'
-                    : 'text-gray-600 hover:text-gray-900'
+                    ? 'text-heading font-semibold'
+                    : 'text-muted-foreground hover:text-heading'
                 }`}
               >
                 Contact
@@ -158,7 +158,7 @@ export default function Header() {
             </li>
           </ul>
           <button
-            className="md:hidden text-gray-900 cursor-pointer"
+            className="md:hidden text-heading cursor-pointer"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             aria-label="Toggle menu"
           >
@@ -196,8 +196,8 @@ export default function Header() {
                 }}
                 className={`block w-full text-left transition-colors cursor-pointer ${
                   activeSection === 'home'
-                    ? 'text-gray-900 font-semibold'
-                    : 'text-gray-600 hover:text-gray-900'
+                    ? 'text-heading font-semibold'
+                    : 'text-muted-foreground hover:text-heading'
                 }`}
               >
                 {isHomePage ? 'Home' : 'Go Home'}
@@ -211,8 +211,8 @@ export default function Header() {
                 }}
                 className={`block w-full text-left transition-colors cursor-pointer ${
                   activeSection === 'about'
-                    ? 'text-gray-900 font-semibold'
-                    : 'text-gray-600 hover:text-gray-900'
+                    ? 'text-heading font-semibold'
+                    : 'text-muted-foreground hover:text-heading'
                 }`}
               >
                 About Me
@@ -224,8 +224,8 @@ export default function Header() {
                 onClick={() => setIsMobileMenuOpen(false)}
                 className={`block w-full text-left transition-colors cursor-pointer ${
                   isWorkPage || (isHomePage && activeSection === 'work')
-                    ? 'text-gray-900 font-semibold'
-                    : 'text-gray-600 hover:text-gray-900'
+                    ? 'text-heading font-semibold'
+                    : 'text-muted-foreground hover:text-heading'
                 }`}
               >
                 My Work
@@ -235,7 +235,7 @@ export default function Header() {
               <Link
                 href="/resume"
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="block text-gray-600 hover:text-gray-900 transition-colors cursor-pointer"
+                className="block text-muted-foreground hover:text-heading transition-colors cursor-pointer"
               >
                 Resume
               </Link>
@@ -248,8 +248,8 @@ export default function Header() {
                 }}
                 className={`block w-full text-left transition-colors cursor-pointer ${
                   activeSection === 'contact'
-                    ? 'text-gray-900 font-semibold'
-                    : 'text-gray-600 hover:text-gray-900'
+                    ? 'text-heading font-semibold'
+                    : 'text-muted-foreground hover:text-heading'
                 }`}
               >
                 Contact

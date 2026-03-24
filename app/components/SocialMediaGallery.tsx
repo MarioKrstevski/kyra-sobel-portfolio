@@ -23,13 +23,13 @@ export default function SocialMediaGallery ({ paulsonLinks, samples }: SocialMed
 
   return (
     <ScrollAnimation>
-      <h3 className="text-3xl font-bold text-gray-900 mb-6">Social Media Samples</h3>
+      <h3 className="text-3xl font-bold text-heading mb-6">Social Media Samples</h3>
       <div className="grid grid-cols-2 md:grid-cols-4 gap-1 mb-12">
         {sampleSet.map((sample) => (
           <button
             type="button"
             key={sample.id}
-            className="relative aspect-square cursor-pointer group overflow-hidden rounded-sm bg-gray-200 w-full border-0 p-0 text-left"
+            className="relative aspect-square cursor-pointer group overflow-hidden rounded-sm bg-placeholder w-full border-0 p-0 text-left"
             onClick={() => setSelectedImage(sample.image)}
             aria-label={`View ${sample.client}: ${sample.description}`}
           >
@@ -51,10 +51,10 @@ export default function SocialMediaGallery ({ paulsonLinks, samples }: SocialMed
       </div>
 
       <div className="mb-8">
-        <h4 className="text-2xl font-semibold text-gray-900 mb-4">
+        <h4 className="text-2xl font-semibold text-heading mb-4">
           Featured Client: Paulson Institute
         </h4>
-        <p className="text-gray-600 mb-4">
+        <p className="text-muted-foreground mb-4">
           Social media content creation and strategy for environmental and
           sustainability communications.
         </p>
@@ -65,7 +65,7 @@ export default function SocialMediaGallery ({ paulsonLinks, samples }: SocialMed
               href={link.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="block text-blue-600 hover:text-blue-800 hover:underline cursor-pointer"
+              className="block text-link hover:text-link-hover hover:underline cursor-pointer"
             >
               → {link.title}
             </a>
