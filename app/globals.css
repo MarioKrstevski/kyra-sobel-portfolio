@@ -10,12 +10,12 @@
   --background: #f6f8fa;
   --foreground: #3a3d42;
   --heading: #2f3236;
-  --muted-foreground: #656b72;
+  --muted-foreground: #505459;
   --caption: #7e848c;
   --hero-from: #f9fbfd;
   --hero-to: #eef2f6;
   --about-bg: #e6eaef;
-  --muted-bg: #dde2e8;
+  --muted-bg: #e2e6ec;
   --primary: #3d454d;
   --primary-hover: #323840;
   --primary-contrast: #f7f9fb;
@@ -74,5 +74,17 @@ h4,
 h5,
 h6 {
   font-family: var(--font-active-heading), Georgia, 'Times New Roman', serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
   color: var(--heading);
+}
+
+.bg-footer-bg h1,
+.bg-footer-bg h2,
+.bg-footer-bg h3,
+.bg-footer-bg h4,
+.bg-footer-bg h5,
+.bg-footer-bg h6 {
+  color: var(--footer-text);
 }
