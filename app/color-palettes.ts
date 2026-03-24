@@ -60,7 +60,7 @@ export const COLOR_PALETTES: ColorPaletteMeta[] = [
   {
     id: 'canvas',
     label: 'Canvas (white + gray)',
-    hint: 'Mostly white; gray bands on My Work & contact — opposite of Ink',
+    hint: 'Mostly white; gray on My Work only; contact stays white — opposite of Ink',
   },
 ]
 

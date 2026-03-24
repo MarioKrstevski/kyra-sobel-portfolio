@@ -122,7 +122,7 @@ export default function Footer() {
             </ul>
           </div>
         </div>
-        <div className="border-t border-white/10 mt-8 pt-8 text-center text-footer-muted">
+        <div className="border-t border-border mt-8 pt-8 text-center text-footer-muted">
           <p>&copy; {new Date().getFullYear()} Kyra Sobel Media. All rights reserved.</p>
         </div>
       </div>

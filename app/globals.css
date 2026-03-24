@@ -288,9 +288,17 @@ html[data-color-palette="canvas"] {
   --border-strong: #bdbdbd;
   --card-bg: #f3f3f3;
   --placeholder-bg: #d8d8d8;
-  --footer-bg: #1c1916;
-  --footer-muted: #c4bfb6;
-  --footer-text: #faf7f2;
+  /* Footer: light bar + dark type (matches rest of canvas) */
+  --footer-bg: #ffffff;
+  --footer-muted: #6a6a6a;
+  --footer-text: #121212;
+  /* Contact section matches page (white); Work stays on gray band */
+  --contact-bg: var(--background);
+}
+
+/* Contact uses gray band everywhere except canvas (white + gray) */
+html[data-color-palette]:not([data-color-palette='canvas']) {
+  --contact-bg: var(--muted-bg);
 }
 
 @theme inline {
@@ -306,6 +314,7 @@ html[data-color-palette="canvas"] {
   --color-link-hover: var(--link-hover);
   --color-about: var(--about-bg);
   --color-band: var(--muted-bg);
+  --color-contact: var(--contact-bg);
   --color-page: var(--background);
   --color-border: var(--border);
   --color-border-strong: var(--border-strong);

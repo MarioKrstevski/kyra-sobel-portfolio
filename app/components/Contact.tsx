@@ -4,7 +4,7 @@ export default function Contact() {
   return (
     <section
       id="contact"
-      className="py-20 px-4 bg-band"
+      className="py-20 px-4 bg-contact"
     >
       <div className="container mx-auto max-w-4xl">
         <ScrollAnimation>
