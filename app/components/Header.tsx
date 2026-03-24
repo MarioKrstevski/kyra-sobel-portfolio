@@ -145,14 +145,6 @@ export default function Header() {
               </Link>
             </li>
             <li>
-              <Link
-                href="/blog"
-                className="text-gray-600 hover:text-gray-900 transition-colors cursor-pointer"
-              >
-                Blog
-              </Link>
-            </li>
-            <li>
               <button
                 onClick={() => scrollToSection('contact')}
                 className={`transition-colors cursor-pointer ${
@@ -246,15 +238,6 @@ export default function Header() {
                 className="block text-gray-600 hover:text-gray-900 transition-colors cursor-pointer"
               >
                 Resume
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/blog"
-                onClick={() => setIsMobileMenuOpen(false)}
-                className="block text-gray-600 hover:text-gray-900 transition-colors cursor-pointer"
-              >
-                Blog
               </Link>
             </li>
             <li>

@@ -1,7 +1,8 @@
-import Header from '../components/Header'
-import Footer from '../components/Footer'
-import BlogCard from '../components/BlogCard'
-import { getAllBlogPosts } from '../data/blog-posts'
+// Archived: move this folder to app/blog/ to restore /blog routes; update Header, Footer, sitemap.
+import Header from '../../components/Header'
+import Footer from '../../components/Footer'
+import BlogCard from '../../components/BlogCard'
+import { getAllBlogPosts } from '../../data/blog-posts'
 
 export const metadata = {
   title: 'Blog',

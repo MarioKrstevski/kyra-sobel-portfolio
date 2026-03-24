@@ -67,11 +67,6 @@ export default function Footer() {
                   Resume
                 </Link>
               </li>
-              <li>
-                <Link href="/blog" className="hover:text-white transition-colors cursor-pointer">
-                  Blog
-                </Link>
-              </li>
             </ul>
           </div>
           <div>

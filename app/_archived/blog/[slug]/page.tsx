@@ -1,8 +1,9 @@
+// Archived: see app/_archived/blog/page.tsx
 import type { Metadata } from 'next'
-import Header from '../../components/Header'
-import Footer from '../../components/Footer'
-import BlogPostComponent from '../../components/BlogPost'
-import { getBlogPostBySlug, getAllBlogPosts } from '../../data/blog-posts'
+import Header from '../../../components/Header'
+import Footer from '../../../components/Footer'
+import BlogPostComponent from '../../../components/BlogPost'
+import { getBlogPostBySlug, getAllBlogPosts } from '../../../data/blog-posts'
 import { notFound } from 'next/navigation'
 import Link from 'next/link'
 

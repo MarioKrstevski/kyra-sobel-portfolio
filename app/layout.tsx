@@ -1,17 +1,21 @@
-import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
-import "./styles/animations.css";
+import type { Metadata } from 'next'
+import { Fraunces, Source_Sans_3 } from 'next/font/google'
+import './globals.css'
+import './styles/animations.css'
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
+// Body: Source Sans 3 — clear, warm, professional on screen
+const sourceSans = Source_Sans_3({
+  variable: '--font-source-sans',
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700'],
+})
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+// Headings: Fraunces — soft editorial serif (journalism / storytelling)
+const fraunces = Fraunces({
+  variable: '--font-fraunces',
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700'],
+})
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://kyrasobelmedia.com'
 
@@ -65,7 +69,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${sourceSans.variable} ${fraunces.variable} antialiased font-sans`}
       >
         {children}
       </body>
