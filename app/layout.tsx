@@ -1,6 +1,5 @@
 import type { Metadata } from 'next'
 import { Figtree, Fraunces } from 'next/font/google'
-import ColorPaletteSwitcher from './components/ColorPaletteSwitcher'
 import './globals.css'
 import './styles/animations.css'
 
@@ -69,12 +68,10 @@ export default function RootLayout ({
     <html
       lang="en"
       className={`${figtree.variable} ${fraunces.variable}`}
-      data-color-palette="paper"
       suppressHydrationWarning
     >
       <body className="antialiased font-sans text-foreground">
         {children}
-        <ColorPaletteSwitcher />
       </body>
     </html>
   )
