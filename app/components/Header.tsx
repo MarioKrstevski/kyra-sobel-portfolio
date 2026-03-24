@@ -20,7 +20,7 @@ export default function Header() {
 
       // Only update active section if on home page
       if (isHomePage) {
-        const sections = ['home', 'about', 'work', 'clients', 'contact']
+        const sections = ['home', 'about', 'work', 'contact']
         const current = sections.find((section) => {
           const element = document.getElementById(section)
           if (element) {

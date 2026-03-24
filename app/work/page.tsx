@@ -9,9 +9,12 @@ import { paulsonInstituteLinksFull, writingSamplesFull, multimediaProjectsFull, 
 export const metadata = {
   title: 'My Work',
   description: 'Social media samples, photography portfolio, writing and published articles, and digital multimedia projects.',
+  alternates: { canonical: '/work' },
   openGraph: {
     title: 'My Work | Kyra Sobel Media',
     description: 'Social media samples, photography portfolio, writing and published articles, and digital multimedia projects.',
+    url: '/work',
+    images: ['/resources/WebsiteAssetsAndLogos/LOGO-7.png'],
   },
 }
 

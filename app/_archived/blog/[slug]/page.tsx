@@ -22,7 +22,7 @@ export async function generateMetadata ({ params }: BlogPostPageProps): Promise<
   const { slug } = await params
   const post = getBlogPostBySlug(slug)
   if (!post) return {}
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://kyrasobelmedia.com'
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://kyrasobel.com'
   return {
     title: post.title,
     description: post.excerpt,

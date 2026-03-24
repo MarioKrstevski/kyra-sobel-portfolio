@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { Figtree, Fraunces } from 'next/font/google'
+import JsonLd from './components/JsonLd'
 import './globals.css'
 import './styles/animations.css'
 
@@ -15,7 +16,7 @@ const fraunces = Fraunces({
   weight: ['400', '500', '600', '700'],
 })
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://kyrasobelmedia.com'
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://kyrasobel.com'
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -47,6 +48,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Kyra Sobel Media | Social Media Manager | Multimedia Journalist | Photographer',
     description: 'Chicago-based freelance journalist, photographer, editor, and social media manager.',
+    images: ['/resources/WebsiteAssetsAndLogos/LOGO-7.png'],
   },
   robots: {
     index: true,
@@ -55,8 +57,9 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: '/resources/WebsiteAssetsAndLogos/LOGO-7.png',
+    apple: '/resources/WebsiteAssetsAndLogos/LOGO-7.png',
   },
-  alternates: { canonical: siteUrl },
+  alternates: { canonical: '/' },
 }
 
 export default function RootLayout ({
@@ -71,6 +74,7 @@ export default function RootLayout ({
       suppressHydrationWarning
     >
       <body className="antialiased font-sans text-foreground">
+        <JsonLd />
         {children}
       </body>
     </html>
